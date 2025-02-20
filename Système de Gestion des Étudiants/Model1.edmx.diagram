@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2012c58d6af344968fd0607a51550434" Name="Diagram1">
+        <EntityTypeShape EntityType="GestionEtudiantsModel.Classes" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionEtudiantsModel.Cours" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionEtudiantsModel.Etudiants" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionEtudiantsModel.Matieres" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionEtudiantsModel.Notes" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionEtudiantsModel.OTPCodes" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionEtudiantsModel.Professeurs" Width="1.5" PointX="7.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionEtudiantsModel.Utilisateurs" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="GestionEtudiantsModel.FK__Etudiants__IdCla__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionEtudiantsModel.FK__Notes__IdEtudian__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionEtudiantsModel.FK__Notes__IdMatiere__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionEtudiantsModel.FK__OTPCodes__IdUtil__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionEtudiantsModel.ClassesCours" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionEtudiantsModel.CoursMatieres" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionEtudiantsModel.ProfesseursClasses" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionEtudiantsModel.ProfesseursMatieres" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

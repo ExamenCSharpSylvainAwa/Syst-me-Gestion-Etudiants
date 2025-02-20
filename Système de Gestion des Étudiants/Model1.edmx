@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GestionEtudiantsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Classes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomClasse" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClassesCours">
+          <Key>
+            <PropertyRef Name="IdClasse" />
+            <PropertyRef Name="IdCours" />
+          </Key>
+          <Property Name="IdClasse" Type="int" Nullable="false" />
+          <Property Name="IdCours" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomCours" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CoursMatieres">
+          <Key>
+            <PropertyRef Name="IdCours" />
+            <PropertyRef Name="IdMatiere" />
+          </Key>
+          <Property Name="IdCours" Type="int" Nullable="false" />
+          <Property Name="IdMatiere" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Etudiants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Matricule" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Prenom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateNaissance" Type="datetime" Nullable="false" />
+          <Property Name="Sexe" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Adresse" Type="nvarchar" MaxLength="255" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdClasse" Type="int" />
+        </EntityType>
+        <EntityType Name="Matieres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomMatiere" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEtudiant" Type="int" />
+          <Property Name="IdMatiere" Type="int" />
+          <Property Name="Note" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OTPCodes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUtilisateur" Type="int" />
+          <Property Name="Code" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DateExpiration" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Professeurs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Prenom" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProfesseursClasses">
+          <Key>
+            <PropertyRef Name="IdProfesseur" />
+            <PropertyRef Name="IdClasse" />
+          </Key>
+          <Property Name="IdProfesseur" Type="int" Nullable="false" />
+          <Property Name="IdClasse" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProfesseursMatieres">
+          <Key>
+            <PropertyRef Name="IdProfesseur" />
+            <PropertyRef Name="IdMatiere" />
+          </Key>
+          <Property Name="IdProfesseur" Type="int" Nullable="false" />
+          <Property Name="IdMatiere" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Utilisateurs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomUtilisateur" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MotDePasse" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__ClassesCo__IdCla__5165187F">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClassesCours" Type="Self.ClassesCours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClassesCours">
+              <PropertyRef Name="IdClasse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ClassesCo__IdCou__52593CB8">
+          <End Role="Cours" Type="Self.Cours" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClassesCours" Type="Self.ClassesCours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cours">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClassesCours">
+              <PropertyRef Name="IdCours" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CoursMati__IdCou__5535A963">
+          <End Role="Cours" Type="Self.Cours" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CoursMatieres" Type="Self.CoursMatieres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cours">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CoursMatieres">
+              <PropertyRef Name="IdCours" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CoursMati__IdMat__5629CD9C">
+          <End Role="Matieres" Type="Self.Matieres" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CoursMatieres" Type="Self.CoursMatieres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matieres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CoursMatieres">
+              <PropertyRef Name="IdMatiere" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Etudiants__IdCla__47DBAE45">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="0..1" />
+          <End Role="Etudiants" Type="Self.Etudiants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Etudiants">
+              <PropertyRef Name="IdClasse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notes__IdEtudian__4AB81AF0">
+          <End Role="Etudiants" Type="Self.Etudiants" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etudiants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="IdEtudiant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notes__IdMatiere__4BAC3F29">
+          <End Role="Matieres" Type="Self.Matieres" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matieres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="IdMatiere" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OTPCodes__IdUtil__4E88ABD4">
+          <End Role="Utilisateurs" Type="Self.Utilisateurs" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OTPCodes" Type="Self.OTPCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utilisateurs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OTPCodes">
+              <PropertyRef Name="IdUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Professeu__IdCla__5DCAEF64">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProfesseursClasses" Type="Self.ProfesseursClasses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfesseursClasses">
+              <PropertyRef Name="IdClasse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Professeu__IdMat__59FA5E80">
+          <End Role="Matieres" Type="Self.Matieres" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProfesseursMatieres" Type="Self.ProfesseursMatieres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matieres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfesseursMatieres">
+              <PropertyRef Name="IdMatiere" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Professeu__IdPro__59063A47">
+          <End Role="Professeurs" Type="Self.Professeurs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProfesseursMatieres" Type="Self.ProfesseursMatieres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professeurs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfesseursMatieres">
+              <PropertyRef Name="IdProfesseur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Professeu__IdPro__5CD6CB2B">
+          <End Role="Professeurs" Type="Self.Professeurs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProfesseursClasses" Type="Self.ProfesseursClasses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professeurs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProfesseursClasses">
+              <PropertyRef Name="IdProfesseur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GestionEtudiantsModelStoreContainer">
+          <EntitySet Name="Classes" EntityType="Self.Classes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClassesCours" EntityType="Self.ClassesCours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cours" EntityType="Self.Cours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoursMatieres" EntityType="Self.CoursMatieres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Etudiants" EntityType="Self.Etudiants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Matieres" EntityType="Self.Matieres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OTPCodes" EntityType="Self.OTPCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Professeurs" EntityType="Self.Professeurs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProfesseursClasses" EntityType="Self.ProfesseursClasses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProfesseursMatieres" EntityType="Self.ProfesseursMatieres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Utilisateurs" EntityType="Self.Utilisateurs" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ClassesCo__IdCla__5165187F" Association="Self.FK__ClassesCo__IdCla__5165187F">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="ClassesCours" EntitySet="ClassesCours" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ClassesCo__IdCou__52593CB8" Association="Self.FK__ClassesCo__IdCou__52593CB8">
+            <End Role="Cours" EntitySet="Cours" />
+            <End Role="ClassesCours" EntitySet="ClassesCours" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CoursMati__IdCou__5535A963" Association="Self.FK__CoursMati__IdCou__5535A963">
+            <End Role="Cours" EntitySet="Cours" />
+            <End Role="CoursMatieres" EntitySet="CoursMatieres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CoursMati__IdMat__5629CD9C" Association="Self.FK__CoursMati__IdMat__5629CD9C">
+            <End Role="Matieres" EntitySet="Matieres" />
+            <End Role="CoursMatieres" EntitySet="CoursMatieres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Etudiants__IdCla__47DBAE45" Association="Self.FK__Etudiants__IdCla__47DBAE45">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Etudiants" EntitySet="Etudiants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notes__IdEtudian__4AB81AF0" Association="Self.FK__Notes__IdEtudian__4AB81AF0">
+            <End Role="Etudiants" EntitySet="Etudiants" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notes__IdMatiere__4BAC3F29" Association="Self.FK__Notes__IdMatiere__4BAC3F29">
+            <End Role="Matieres" EntitySet="Matieres" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OTPCodes__IdUtil__4E88ABD4" Association="Self.FK__OTPCodes__IdUtil__4E88ABD4">
+            <End Role="Utilisateurs" EntitySet="Utilisateurs" />
+            <End Role="OTPCodes" EntitySet="OTPCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Professeu__IdCla__5DCAEF64" Association="Self.FK__Professeu__IdCla__5DCAEF64">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="ProfesseursClasses" EntitySet="ProfesseursClasses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Professeu__IdMat__59FA5E80" Association="Self.FK__Professeu__IdMat__59FA5E80">
+            <End Role="Matieres" EntitySet="Matieres" />
+            <End Role="ProfesseursMatieres" EntitySet="ProfesseursMatieres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Professeu__IdPro__59063A47" Association="Self.FK__Professeu__IdPro__59063A47">
+            <End Role="Professeurs" EntitySet="Professeurs" />
+            <End Role="ProfesseursMatieres" EntitySet="ProfesseursMatieres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Professeu__IdPro__5CD6CB2B" Association="Self.FK__Professeu__IdPro__5CD6CB2B">
+            <End Role="Professeurs" EntitySet="Professeurs" />
+            <End Role="ProfesseursClasses" EntitySet="ProfesseursClasses" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GestionEtudiantsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Classes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomClasse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Etudiants" Relationship="Self.FK__Etudiants__IdCla__47DBAE45" FromRole="Classes" ToRole="Etudiants" />
+          <NavigationProperty Name="Cours" Relationship="Self.ClassesCours" FromRole="Classes" ToRole="Cours" />
+          <NavigationProperty Name="Professeurs" Relationship="Self.ProfesseursClasses" FromRole="Classes" ToRole="Professeurs" />
+        </EntityType>
+        <EntityType Name="Cours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomCours" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Classes" Relationship="Self.ClassesCours" FromRole="Cours" ToRole="Classes" />
+          <NavigationProperty Name="Matieres" Relationship="Self.CoursMatieres" FromRole="Cours" ToRole="Matieres" />
+        </EntityType>
+        <EntityType Name="Etudiants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Matricule" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prenom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateNaissance" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sexe" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adresse" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdClasse" Type="Int32" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK__Etudiants__IdCla__47DBAE45" FromRole="Etudiants" ToRole="Classes" />
+          <NavigationProperty Name="Notes" Relationship="Self.FK__Notes__IdEtudian__4AB81AF0" FromRole="Etudiants" ToRole="Notes" />
+        </EntityType>
+        <EntityType Name="Matieres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomMatiere" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Notes" Relationship="Self.FK__Notes__IdMatiere__4BAC3F29" FromRole="Matieres" ToRole="Notes" />
+          <NavigationProperty Name="Cours" Relationship="Self.CoursMatieres" FromRole="Matieres" ToRole="Cours" />
+          <NavigationProperty Name="Professeurs" Relationship="Self.ProfesseursMatieres" FromRole="Matieres" ToRole="Professeurs" />
+        </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEtudiant" Type="Int32" />
+          <Property Name="IdMatiere" Type="Int32" />
+          <Property Name="Note" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Etudiants" Relationship="Self.FK__Notes__IdEtudian__4AB81AF0" FromRole="Notes" ToRole="Etudiants" />
+          <NavigationProperty Name="Matieres" Relationship="Self.FK__Notes__IdMatiere__4BAC3F29" FromRole="Notes" ToRole="Matieres" />
+        </EntityType>
+        <EntityType Name="OTPCodes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUtilisateur" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateExpiration" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Utilisateurs" Relationship="Self.FK__OTPCodes__IdUtil__4E88ABD4" FromRole="OTPCodes" ToRole="Utilisateurs" />
+        </EntityType>
+        <EntityType Name="Professeurs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prenom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Classes" Relationship="Self.ProfesseursClasses" FromRole="Professeurs" ToRole="Classes" />
+          <NavigationProperty Name="Matieres" Relationship="Self.ProfesseursMatieres" FromRole="Professeurs" ToRole="Matieres" />
+        </EntityType>
+        <EntityType Name="Utilisateurs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomUtilisateur" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MotDePasse" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OTPCodes" Relationship="Self.FK__OTPCodes__IdUtil__4E88ABD4" FromRole="Utilisateurs" ToRole="OTPCodes" />
+        </EntityType>
+        <Association Name="FK__Etudiants__IdCla__47DBAE45">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="0..1" />
+          <End Role="Etudiants" Type="Self.Etudiants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Etudiants">
+              <PropertyRef Name="IdClasse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notes__IdEtudian__4AB81AF0">
+          <End Role="Etudiants" Type="Self.Etudiants" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etudiants">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="IdEtudiant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notes__IdMatiere__4BAC3F29">
+          <End Role="Matieres" Type="Self.Matieres" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matieres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="IdMatiere" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OTPCodes__IdUtil__4E88ABD4">
+          <End Role="Utilisateurs" Type="Self.Utilisateurs" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OTPCodes" Type="Self.OTPCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utilisateurs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OTPCodes">
+              <PropertyRef Name="IdUtilisateur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClassesCours">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+          <End Role="Cours" Type="Self.Cours" Multiplicity="*" />
+        </Association>
+        <Association Name="CoursMatieres">
+          <End Role="Cours" Type="Self.Cours" Multiplicity="*" />
+          <End Role="Matieres" Type="Self.Matieres" Multiplicity="*" />
+        </Association>
+        <Association Name="ProfesseursClasses">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+          <End Role="Professeurs" Type="Self.Professeurs" Multiplicity="*" />
+        </Association>
+        <Association Name="ProfesseursMatieres">
+          <End Role="Matieres" Type="Self.Matieres" Multiplicity="*" />
+          <End Role="Professeurs" Type="Self.Professeurs" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="GestionEtudiantsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Classes" EntityType="Self.Classes" />
+          <EntitySet Name="Cours" EntityType="Self.Cours" />
+          <EntitySet Name="Etudiants" EntityType="Self.Etudiants" />
+          <EntitySet Name="Matieres" EntityType="Self.Matieres" />
+          <EntitySet Name="Notes" EntityType="Self.Notes" />
+          <EntitySet Name="OTPCodes" EntityType="Self.OTPCodes" />
+          <EntitySet Name="Professeurs" EntityType="Self.Professeurs" />
+          <EntitySet Name="Utilisateurs" EntityType="Self.Utilisateurs" />
+          <AssociationSet Name="FK__Etudiants__IdCla__47DBAE45" Association="Self.FK__Etudiants__IdCla__47DBAE45">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Etudiants" EntitySet="Etudiants" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notes__IdEtudian__4AB81AF0" Association="Self.FK__Notes__IdEtudian__4AB81AF0">
+            <End Role="Etudiants" EntitySet="Etudiants" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notes__IdMatiere__4BAC3F29" Association="Self.FK__Notes__IdMatiere__4BAC3F29">
+            <End Role="Matieres" EntitySet="Matieres" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OTPCodes__IdUtil__4E88ABD4" Association="Self.FK__OTPCodes__IdUtil__4E88ABD4">
+            <End Role="Utilisateurs" EntitySet="Utilisateurs" />
+            <End Role="OTPCodes" EntitySet="OTPCodes" />
+          </AssociationSet>
+          <AssociationSet Name="ClassesCours" Association="Self.ClassesCours">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Cours" EntitySet="Cours" />
+          </AssociationSet>
+          <AssociationSet Name="CoursMatieres" Association="Self.CoursMatieres">
+            <End Role="Cours" EntitySet="Cours" />
+            <End Role="Matieres" EntitySet="Matieres" />
+          </AssociationSet>
+          <AssociationSet Name="ProfesseursClasses" Association="Self.ProfesseursClasses">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Professeurs" EntitySet="Professeurs" />
+          </AssociationSet>
+          <AssociationSet Name="ProfesseursMatieres" Association="Self.ProfesseursMatieres">
+            <End Role="Matieres" EntitySet="Matieres" />
+            <End Role="Professeurs" EntitySet="Professeurs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GestionEtudiantsModelStoreContainer" CdmEntityContainer="GestionEtudiantsEntities">
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="GestionEtudiantsModel.Classes">
+              <MappingFragment StoreEntitySet="Classes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomClasse" ColumnName="NomClasse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cours">
+            <EntityTypeMapping TypeName="GestionEtudiantsModel.Cours">
+              <MappingFragment StoreEntitySet="Cours">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomCours" ColumnName="NomCours" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Etudiants">
+            <EntityTypeMapping TypeName="GestionEtudiantsModel.Etudiants">
+              <MappingFragment StoreEntitySet="Etudiants">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IdClasse" ColumnName="IdClasse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Matieres">
+            <EntityTypeMapping TypeName="GestionEtudiantsModel.Matieres">
+              <MappingFragment StoreEntitySet="Matieres">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomMatiere" ColumnName="NomMatiere" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="GestionEtudiantsModel.Notes">
+              <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdEtudiant" ColumnName="IdEtudiant" />
+                <ScalarProperty Name="IdMatiere" ColumnName="IdMatiere" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OTPCodes">
+            <EntityTypeMapping TypeName="GestionEtudiantsModel.OTPCodes">
+              <MappingFragment StoreEntitySet="OTPCodes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUtilisateur" ColumnName="IdUtilisateur" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="DateExpiration" ColumnName="DateExpiration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Professeurs">
+            <EntityTypeMapping TypeName="GestionEtudiantsModel.Professeurs">
+              <MappingFragment StoreEntitySet="Professeurs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utilisateurs">
+            <EntityTypeMapping TypeName="GestionEtudiantsModel.Utilisateurs">
+              <MappingFragment StoreEntitySet="Utilisateurs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomUtilisateur" ColumnName="NomUtilisateur" />
+                <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ClassesCours" TypeName="GestionEtudiantsModel.ClassesCours" StoreEntitySet="ClassesCours">
+            <EndProperty Name="Classes">
+              <ScalarProperty Name="Id" ColumnName="IdClasse" />
+            </EndProperty>
+            <EndProperty Name="Cours">
+              <ScalarProperty Name="Id" ColumnName="IdCours" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CoursMatieres" TypeName="GestionEtudiantsModel.CoursMatieres" StoreEntitySet="CoursMatieres">
+            <EndProperty Name="Cours">
+              <ScalarProperty Name="Id" ColumnName="IdCours" />
+            </EndProperty>
+            <EndProperty Name="Matieres">
+              <ScalarProperty Name="Id" ColumnName="IdMatiere" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProfesseursClasses" TypeName="GestionEtudiantsModel.ProfesseursClasses" StoreEntitySet="ProfesseursClasses">
+            <EndProperty Name="Classes">
+              <ScalarProperty Name="Id" ColumnName="IdClasse" />
+            </EndProperty>
+            <EndProperty Name="Professeurs">
+              <ScalarProperty Name="Id" ColumnName="IdProfesseur" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProfesseursMatieres" TypeName="GestionEtudiantsModel.ProfesseursMatieres" StoreEntitySet="ProfesseursMatieres">
+            <EndProperty Name="Matieres">
+              <ScalarProperty Name="Id" ColumnName="IdMatiere" />
+            </EndProperty>
+            <EndProperty Name="Professeurs">
+              <ScalarProperty Name="Id" ColumnName="IdProfesseur" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

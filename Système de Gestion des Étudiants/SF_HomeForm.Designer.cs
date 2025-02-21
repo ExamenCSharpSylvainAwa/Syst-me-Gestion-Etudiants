@@ -44,7 +44,7 @@
             // btnUser
             // 
             this.btnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUser.Location = new System.Drawing.Point(411, 185);
+            this.btnUser.Location = new System.Drawing.Point(411, 168);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(343, 94);
             this.btnUser.TabIndex = 0;
@@ -54,7 +54,7 @@
             // btnEtudiant
             // 
             this.btnEtudiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEtudiant.Location = new System.Drawing.Point(808, 185);
+            this.btnEtudiant.Location = new System.Drawing.Point(821, 168);
             this.btnEtudiant.Name = "btnEtudiant";
             this.btnEtudiant.Size = new System.Drawing.Size(352, 94);
             this.btnEtudiant.TabIndex = 1;
@@ -75,7 +75,7 @@
             // btnClasse
             // 
             this.btnClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClasse.Location = new System.Drawing.Point(1261, 185);
+            this.btnClasse.Location = new System.Drawing.Point(1261, 168);
             this.btnClasse.Name = "btnClasse";
             this.btnClasse.Size = new System.Drawing.Size(343, 94);
             this.btnClasse.TabIndex = 3;

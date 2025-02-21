@@ -28,18 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnUser = new System.Windows.Forms.Button();
             this.btnEtudiant = new System.Windows.Forms.Button();
             this.btnProffesseur = new System.Windows.Forms.Button();
             this.btnClasse = new System.Windows.Forms.Button();
             this.btnCoursMatiere = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnRapport = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUser
             // 
             this.btnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUser.Location = new System.Drawing.Point(358, 240);
+            this.btnUser.Location = new System.Drawing.Point(411, 185);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(343, 94);
             this.btnUser.TabIndex = 0;
@@ -49,9 +54,9 @@
             // btnEtudiant
             // 
             this.btnEtudiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEtudiant.Location = new System.Drawing.Point(808, 240);
+            this.btnEtudiant.Location = new System.Drawing.Point(808, 185);
             this.btnEtudiant.Name = "btnEtudiant";
-            this.btnEtudiant.Size = new System.Drawing.Size(308, 94);
+            this.btnEtudiant.Size = new System.Drawing.Size(352, 94);
             this.btnEtudiant.TabIndex = 1;
             this.btnEtudiant.Text = "Etudiants";
             this.btnEtudiant.UseVisualStyleBackColor = true;
@@ -59,19 +64,20 @@
             // btnProffesseur
             // 
             this.btnProffesseur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProffesseur.Location = new System.Drawing.Point(808, 392);
+            this.btnProffesseur.Location = new System.Drawing.Point(821, 410);
             this.btnProffesseur.Name = "btnProffesseur";
-            this.btnProffesseur.Size = new System.Drawing.Size(308, 94);
+            this.btnProffesseur.Size = new System.Drawing.Size(352, 94);
             this.btnProffesseur.TabIndex = 2;
             this.btnProffesseur.Text = "Professeurs";
             this.btnProffesseur.UseVisualStyleBackColor = true;
+            this.btnProffesseur.Click += new System.EventHandler(this.btnProffesseur_Click);
             // 
             // btnClasse
             // 
             this.btnClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClasse.Location = new System.Drawing.Point(1273, 240);
+            this.btnClasse.Location = new System.Drawing.Point(1261, 185);
             this.btnClasse.Name = "btnClasse";
-            this.btnClasse.Size = new System.Drawing.Size(308, 94);
+            this.btnClasse.Size = new System.Drawing.Size(343, 94);
             this.btnClasse.TabIndex = 3;
             this.btnClasse.Text = "Classes";
             this.btnClasse.UseVisualStyleBackColor = true;
@@ -79,7 +85,7 @@
             // btnCoursMatiere
             // 
             this.btnCoursMatiere.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCoursMatiere.Location = new System.Drawing.Point(358, 392);
+            this.btnCoursMatiere.Location = new System.Drawing.Point(411, 410);
             this.btnCoursMatiere.Name = "btnCoursMatiere";
             this.btnCoursMatiere.Size = new System.Drawing.Size(343, 94);
             this.btnCoursMatiere.TabIndex = 4;
@@ -89,18 +95,51 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1273, 392);
+            this.button1.Location = new System.Drawing.Point(1261, 410);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(308, 94);
+            this.button1.Size = new System.Drawing.Size(343, 94);
             this.button1.TabIndex = 5;
             this.button1.Text = "Notes";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 168);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(324, 484);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 46);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Administrateur";
+            // 
+            // btnRapport
+            // 
+            this.btnRapport.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRapport.Location = new System.Drawing.Point(744, 604);
+            this.btnRapport.Name = "btnRapport";
+            this.btnRapport.Size = new System.Drawing.Size(520, 94);
+            this.btnRapport.TabIndex = 8;
+            this.btnRapport.Text = "Rapports";
+            this.btnRapport.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1687, 830);
+            this.Controls.Add(this.btnRapport);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCoursMatiere);
             this.Controls.Add(this.btnClasse);
@@ -110,7 +149,9 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Etudiants";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -122,6 +163,9 @@
         private System.Windows.Forms.Button btnClasse;
         private System.Windows.Forms.Button btnCoursMatiere;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRapport;
     }
 }
 

@@ -21,5 +21,10 @@ namespace Système_de_Gestion_des_Étudiants
         {
 
         }
+
+        private void btnProffesseur_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,7 +16,10 @@ namespace Système_de_Gestion_des_Étudiants
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SF_HomeForm());
+            SF_FormManager.loginForm = new SF_LoginForm();
+            Application.Run(SF_FormManager.loginForm);
+
+            
         }
     }
 }

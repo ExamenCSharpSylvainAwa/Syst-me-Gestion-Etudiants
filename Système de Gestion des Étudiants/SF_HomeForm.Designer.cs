@@ -50,6 +50,7 @@
             this.btnUser.TabIndex = 0;
             this.btnUser.Text = "Utilisateurs";
             this.btnUser.UseVisualStyleBackColor = true;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // btnEtudiant
             // 

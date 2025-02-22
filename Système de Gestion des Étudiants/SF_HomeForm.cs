@@ -26,5 +26,11 @@ namespace Système_de_Gestion_des_Étudiants
         {
 
         }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            SF_FormUser formUser = new SF_FormUser();
+            formUser.Show();
+        }
     }
 }

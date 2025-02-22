@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\syst\u00E8me de gestion des \u00E9tudiants\\sf_loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|c:\\sylvain faye\\documents\\documents de cheikh sylvain faye\\l3\\c#\\syst-me-gestion-etudiants\\syst\u00E8me de gestion des \u00E9tudiants\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|solutionrelative:syst\u00E8me de gestion des \u00E9tudiants\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|c:\\sylvain faye\\documents\\documents de cheikh sylvain faye\\l3\\c#\\syst-me-gestion-etudiants\\syst\u00E8me de gestion des \u00E9tudiants\\sf_loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|solutionrelative:syst\u00E8me de gestion des \u00E9tudiants\\sf_loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|solutionrelative:syst\u00E8me de gestion des \u00E9tudiants\\sf_loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|c:\\sylvain faye\\documents\\documents de cheikh sylvain faye\\l3\\c#\\syst-me-gestion-etudiants\\syst\u00E8me de gestion des \u00E9tudiants\\sf_homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\syst\u00E8me de gestion des \u00E9tudiants\\sf_homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{966058AC-397A-45E8-A5CB-844FB59165F9}|Syst\u00E8me de Gestion des \u00C9tudiants\\Syst\u00E8me de Gestion des \u00C9tudiants.csproj|solutionrelative:syst\u00E8me de gestion des \u00E9tudiants\\sf_homeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -54,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,7 +86,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\.gitignore",
+              "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\.gitignore",
+              "ToolTip": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\.gitignore",
+              "RelativeToolTip": "Syst\u00E8me de Gestion des \u00C9tudiants\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-22T14:26:27.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SF_HomeForm.cs",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_HomeForm.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_HomeForm.cs",
@@ -90,12 +107,11 @@
               "RelativeToolTip": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_HomeForm.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAApwB8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T12:48:58.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-22T12:48:58.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SF_FormUser.cs",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormUser.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormUser.cs",
@@ -103,12 +119,11 @@
               "RelativeToolTip": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormUser.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAA9wEUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T12:15:52.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-22T12:15:52.473Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SF_LoginForm.cs",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_LoginForm.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_LoginForm.cs",
@@ -121,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\Program.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\Program.cs",
@@ -133,19 +148,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SF_LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_LoginForm.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_LoginForm.cs",
               "ToolTip": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_LoginForm.cs [Design]",
               "RelativeToolTip": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T11:40:57.73Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-02-22T11:40:57.73Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SF_FormManager.cs",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormManager.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormManager.cs",
@@ -157,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": ".env",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\.env",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\.env",
@@ -165,12 +179,11 @@
               "RelativeToolTip": "Syst\u00E8me de Gestion des \u00C9tudiants\\.env",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001135|",
-              "WhenOpened": "2025-02-22T10:54:17.197Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-22T10:54:17.197Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SF_HomeForm.cs [Design]",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_HomeForm.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_HomeForm.cs",
@@ -181,19 +194,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SF_FormUser.cs [Design]",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormUser.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormUser.cs",
               "ToolTip": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormUser.cs [Design]",
               "RelativeToolTip": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormUser.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T12:14:16.546Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-02-22T12:14:16.546Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SF_FormProfesseur.cs [Design]",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormProfesseur.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormProfesseur.cs",
@@ -204,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "SF_FormAgent.cs [Design]",
               "DocumentMoniker": "C:\\SYLVAIN FAYE\\Documents\\Documents de Cheikh Sylvain FAYE\\L3\\C#\\Syst-me-Gestion-Etudiants\\Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormAgent.cs",
               "RelativeDocumentMoniker": "Syst\u00E8me de Gestion des \u00C9tudiants\\SF_FormAgent.cs",

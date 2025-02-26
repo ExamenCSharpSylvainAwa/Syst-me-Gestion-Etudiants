@@ -24,13 +24,39 @@ namespace Système_de_Gestion_des_Étudiants
 
         private void btnProffesseur_Click(object sender, EventArgs e)
         {
-
+            SF_FormGestionProfesseur formGestionProfesseur = new SF_FormGestionProfesseur();
+            formGestionProfesseur.Show();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
             SF_FormUser formUser = new SF_FormUser();
             formUser.Show();
+        }
+
+        private void btnClasse_Click(object sender, EventArgs e)
+        {
+            SF_FormClasse formClasse = new SF_FormClasse();
+            formClasse.Show();
+        }
+
+        private void btnEtudiant_Click(object sender, EventArgs e)
+        {
+            SF_FormEtudiant formEtudiant = new SF_FormEtudiant();
+            formEtudiant.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SF_LoginForm loginForm = new SF_LoginForm();
+            loginForm.Show();
+        }
+
+        private void btnCoursMatiere_Click(object sender, EventArgs e)
+        {
+            SF_FormCoursMatieres formCoursMatieres  = new SF_FormCoursMatieres();
+            formCoursMatieres.Show();
         }
     }
 }

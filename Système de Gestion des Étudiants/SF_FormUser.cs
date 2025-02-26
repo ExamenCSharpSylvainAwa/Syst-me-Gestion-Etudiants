@@ -24,6 +24,8 @@ namespace Système_de_Gestion_des_Étudiants
 
         private void SF_FormUser_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             refresh();
         }
 
@@ -55,6 +57,7 @@ namespace Système_de_Gestion_des_Étudiants
                 SendVerificationCode(utilisateurs.Telephone, utilisateurs.Id);
 
                 MessageBox.Show("Utilisateur ajouté avec succès et OTP envoyé.");
+                refresh();
             }
         }
         private void SendVerificationCode(string phoneNumber, int userId)

@@ -273,6 +273,12 @@
     <Compile Include="Etudiants.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormRechercheEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRechercheEtudiant.Designer.cs">
+      <DependentUpon>FormRechercheEtudiant.cs</DependentUpon>
+    </Compile>
     <Compile Include="OTPVerificationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,11 +291,35 @@
     <Compile Include="SF_FormAgent.Designer.cs">
       <DependentUpon>SF_FormAgent.cs</DependentUpon>
     </Compile>
+    <Compile Include="SF_FormClasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormClasse.Designer.cs">
+      <DependentUpon>SF_FormClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormCoursMatieres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormCoursMatieres.Designer.cs">
+      <DependentUpon>SF_FormCoursMatieres.cs</DependentUpon>
+    </Compile>
     <Compile Include="SF_FormDashboardDE.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SF_FormDashboardDE.Designer.cs">
       <DependentUpon>SF_FormDashboardDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormEtudiant.Designer.cs">
+      <DependentUpon>SF_FormEtudiant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormGestionProfesseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormGestionProfesseur.Designer.cs">
+      <DependentUpon>SF_FormGestionProfesseur.cs</DependentUpon>
     </Compile>
     <Compile Include="SF_FormManager.cs" />
     <Compile Include="SF_FormProfesseur.cs">
@@ -348,14 +378,29 @@
     <Compile Include="Utilisateurs.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormRechercheEtudiant.resx">
+      <DependentUpon>FormRechercheEtudiant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OTPVerificationForm.resx">
       <DependentUpon>OTPVerificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormAgent.resx">
       <DependentUpon>SF_FormAgent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormClasse.resx">
+      <DependentUpon>SF_FormClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormCoursMatieres.resx">
+      <DependentUpon>SF_FormCoursMatieres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SF_FormDashboardDE.resx">
       <DependentUpon>SF_FormDashboardDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormEtudiant.resx">
+      <DependentUpon>SF_FormEtudiant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormGestionProfesseur.resx">
+      <DependentUpon>SF_FormGestionProfesseur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormProfesseur.resx">
       <DependentUpon>SF_FormProfesseur.cs</DependentUpon>

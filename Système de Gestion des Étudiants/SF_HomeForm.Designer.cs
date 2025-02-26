@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnUser = new System.Windows.Forms.Button();
             this.btnEtudiant = new System.Windows.Forms.Button();
-            this.btnProffesseur = new System.Windows.Forms.Button();
+            this.btnProfesseur = new System.Windows.Forms.Button();
             this.btnClasse = new System.Windows.Forms.Button();
             this.btnCoursMatiere = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRapport = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,17 +62,18 @@
             this.btnEtudiant.TabIndex = 1;
             this.btnEtudiant.Text = "Etudiants";
             this.btnEtudiant.UseVisualStyleBackColor = true;
+            this.btnEtudiant.Click += new System.EventHandler(this.btnEtudiant_Click);
             // 
-            // btnProffesseur
+            // btnProfesseur
             // 
-            this.btnProffesseur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProffesseur.Location = new System.Drawing.Point(821, 410);
-            this.btnProffesseur.Name = "btnProffesseur";
-            this.btnProffesseur.Size = new System.Drawing.Size(352, 94);
-            this.btnProffesseur.TabIndex = 2;
-            this.btnProffesseur.Text = "Professeurs";
-            this.btnProffesseur.UseVisualStyleBackColor = true;
-            this.btnProffesseur.Click += new System.EventHandler(this.btnProffesseur_Click);
+            this.btnProfesseur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfesseur.Location = new System.Drawing.Point(821, 410);
+            this.btnProfesseur.Name = "btnProfesseur";
+            this.btnProfesseur.Size = new System.Drawing.Size(352, 94);
+            this.btnProfesseur.TabIndex = 2;
+            this.btnProfesseur.Text = "Professeurs";
+            this.btnProfesseur.UseVisualStyleBackColor = true;
+            this.btnProfesseur.Click += new System.EventHandler(this.btnProffesseur_Click);
             // 
             // btnClasse
             // 
@@ -82,6 +84,7 @@
             this.btnClasse.TabIndex = 3;
             this.btnClasse.Text = "Classes";
             this.btnClasse.UseVisualStyleBackColor = true;
+            this.btnClasse.Click += new System.EventHandler(this.btnClasse_Click);
             // 
             // btnCoursMatiere
             // 
@@ -92,6 +95,7 @@
             this.btnCoursMatiere.TabIndex = 4;
             this.btnCoursMatiere.Text = "Cours et Matières";
             this.btnCoursMatiere.UseVisualStyleBackColor = true;
+            this.btnCoursMatiere.Click += new System.EventHandler(this.btnCoursMatiere_Click);
             // 
             // button1
             // 
@@ -133,18 +137,31 @@
             this.btnRapport.Text = "Rapports";
             this.btnRapport.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(12, 726);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(303, 47);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Déconnexion";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1687, 830);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnRapport);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCoursMatiere);
             this.Controls.Add(this.btnClasse);
-            this.Controls.Add(this.btnProffesseur);
+            this.Controls.Add(this.btnProfesseur);
             this.Controls.Add(this.btnEtudiant);
             this.Controls.Add(this.btnUser);
             this.Name = "Form1";
@@ -160,13 +177,14 @@
 
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Button btnEtudiant;
-        private System.Windows.Forms.Button btnProffesseur;
+        private System.Windows.Forms.Button btnProfesseur;
         private System.Windows.Forms.Button btnClasse;
         private System.Windows.Forms.Button btnCoursMatiere;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRapport;
+        private System.Windows.Forms.Button button2;
     }
 }
 

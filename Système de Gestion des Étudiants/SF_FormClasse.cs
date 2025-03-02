@@ -49,64 +49,95 @@ namespace Système_de_Gestion_des_Étudiants
             }
         }
 
+        private void ChargerCours()
+        {
+            using (var db = new GestionEtudiantsEntities())
+            {
+                var cours = db.Cours
+                    .Select(c => new
+                    {
+                        c.Id,
+                        NomCours = c.NomCours 
+                    })
+                    .ToList();
+
+                comboBox3.DataSource = cours;
+                comboBox3.DisplayMember = "NomCours";
+                comboBox3.ValueMember = "Id";
+            }
+        }
+
+
+
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             using (var db = new GestionEtudiantsEntities())
             {
-                if (string.IsNullOrWhiteSpace(textBox1.Text))
+                if (string.IsNullOrWhiteSpace(textBox1.Text)  || comboBox3.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Le nom de la classe ne peut pas être vide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Tous les champs doivent être remplis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else
+
+                int idProfesseur;
+                if (!int.TryParse(comboBox1.SelectedValue.ToString(), out idProfesseur))
                 {
-                    int idProfesseur;
-                    if (!int.TryParse(comboBox1.SelectedValue.ToString(), out idProfesseur))
-                    {
-                        MessageBox.Show("Veuillez sélectionner une matière valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    Professeurs professeurs = db.Professeurs.FirstOrDefault(m => m.Id == idProfesseur);
-                    if (professeurs == null)
-                    {
-                        MessageBox.Show("Le professeur spécifiée n'existe pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                    bool classExists = db.Classes.Any(c => c.NomClasse.Equals(textBox1.Text, StringComparison.OrdinalIgnoreCase));
-
-                    if (classExists)
-                    {
-                        MessageBox.Show("Cette classe existe déjà. Veuillez saisir un nom différent.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        
-                        Classes classes = new Classes()
-                        {
-                            NomClasse = textBox1.Text,
-                        };
-
-                        db.Classes.Add(classes);
-                        db.SaveChanges();
-
-                        classes.Professeurs.Add(professeurs);
-                        db.SaveChanges();
-
-                        
-
-                        MessageBox.Show("Classe ajoutée avec succès.");
-
-                      
-                        refresh();
-
-                        
-                        textBox1.Text = string.Empty;
-                    }
+                    MessageBox.Show("Veuillez sélectionner un professeur valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                int idCours;
+                if (!int.TryParse(comboBox3.SelectedValue.ToString(), out idCours))
+                {
+                    MessageBox.Show("Veuillez sélectionner un cours valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Professeurs professeurs = db.Professeurs.FirstOrDefault(m => m.Id == idProfesseur);
+                if (professeurs == null)
+                {
+                    MessageBox.Show("Le professeur spécifié n'existe pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+            
+                Cours cours = db.Cours.FirstOrDefault(c => c.Id == idCours);
+                if (cours == null)
+                {
+                    MessageBox.Show("Le cours spécifié n'existe pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                bool classExists = db.Classes.Any(c => c.NomClasse.Equals(textBox1.Text, StringComparison.OrdinalIgnoreCase));
+                if (classExists)
+                {
+                    MessageBox.Show("Cette classe existe déjà. Veuillez saisir un nom différent.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Classes classe = new Classes()
+                {
+                    NomClasse = textBox1.Text,
+                              
+                };
+
+                db.Classes.Add(classe);
+                db.SaveChanges();
+
+                classe.Professeurs.Add(professeurs);
+                classe.Cours.Add(cours);
+
+                db.SaveChanges();
+
+                MessageBox.Show("Classe ajoutée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                refresh();
+
+                textBox1.Text = string.Empty;
+                comboBox1.SelectedIndex = -1;
+                comboBox3.SelectedIndex = -1;
             }
-
         }
-
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
@@ -158,7 +189,9 @@ namespace Système_de_Gestion_des_Étudiants
                 {
                     classes.Id,
                     classes.NomClasse,
-                    NomProfesseur = string.Join(", ", classes.Professeurs.Select(p => $"{p.Nom} {p.Prenom} ({p.Telephone})"))
+                    NomProfesseur = string.Join(", ", classes.Professeurs.Select(p => $"{p.Nom} {p.Prenom} ({p.Telephone})")),
+                    NomCours = string.Join(", ", classes.Cours.Select(c => $"{c.NomCours} )"))
+
                 }).ToList();
 
                 dataGridView1.DataSource = data;
@@ -213,6 +246,8 @@ namespace Système_de_Gestion_des_Étudiants
         private void SF_FormClasse_Load(object sender, EventArgs e)
         {
             ChargerProfesseur();
+            ChargerCours();
+         
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             refresh();
@@ -237,7 +272,7 @@ namespace Système_de_Gestion_des_Étudiants
 
                 using (var db = new GestionEtudiantsEntities())
                 {
-                    Classes classes = db.Classes.Include("Professeurs")
+                    Classes classes = db.Classes.Include("Professeurs").Include("Cours")
                                                 .FirstOrDefault(c => c.Id == IdClasse);
                     if (classes != null)
                     {
@@ -251,6 +286,16 @@ namespace Système_de_Gestion_des_Étudiants
                         else
                         {
                             comboBox1.SelectedIndex = -1;
+                        }
+
+                        var cours = classes.Cours.FirstOrDefault();
+                        if (cours != null)
+                        {
+                            comboBox3.SelectedValue = cours.Id;
+                        }
+                        else
+                        {
+                            comboBox3.SelectedIndex = -1;
                         }
                     }
                     else

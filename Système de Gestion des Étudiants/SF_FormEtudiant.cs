@@ -443,7 +443,14 @@ namespace Système_de_Gestion_des_Étudiants
         {
             using (var db = new GestionEtudiantsEntities())
             {
-                var query = db.Etudiants.Select(et => new
+                var query = db.Etudiants.AsQueryable();
+
+                if (checkBox3.Checked)
+                {
+                    query = query.OrderByDescending(et => et.Matricule);
+                }
+
+                var result = query.Select(et => new
                 {
                     et.Id,
                     et.Matricule,
@@ -454,16 +461,13 @@ namespace Système_de_Gestion_des_Étudiants
                     et.Telephone,
                     et.Adresse,
                     NomClasse = et.Classes.NomClasse
-                });
+                }).ToList();
 
-                if (checkBox3.Checked)
-                {
-                    query = query.OrderBy(et => et.Matricule);
-                }
-
-                dataGridView1.DataSource = query.ToList();
+                dataGridView1.DataSource = result;
             }
         }
+
+
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
@@ -558,5 +562,18 @@ namespace Système_de_Gestion_des_Étudiants
             }
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePicker1.Value > DateTime.Now)
+            {
+                MessageBox.Show("La date de naissance ne peut pas être dans le futur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dateTimePicker1.Value = DateTime.Now; 
+            }
+        }
+
+        private void txtNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -156,6 +156,7 @@
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(246, 55);
             this.txtNom.TabIndex = 9;
+            this.txtNom.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             this.txtNom.Validating += new System.ComponentModel.CancelEventHandler(this.txtNom_Validating);
             // 
             // txtTelephone
@@ -210,6 +211,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(246, 26);
             this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // rdHomme
             // 

@@ -285,6 +285,12 @@
     <Compile Include="OTPVerificationForm.Designer.cs">
       <DependentUpon>OTPVerificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SF_AdminNotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_AdminNotesForm.Designer.cs">
+      <DependentUpon>SF_AdminNotesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SF_FormAgent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OTPVerificationForm.resx">
       <DependentUpon>OTPVerificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_AdminNotesForm.resx">
+      <DependentUpon>SF_AdminNotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormAgent.resx">
       <DependentUpon>SF_FormAgent.cs</DependentUpon>

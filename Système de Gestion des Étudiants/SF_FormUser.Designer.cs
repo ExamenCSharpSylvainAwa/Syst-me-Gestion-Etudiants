@@ -148,7 +148,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(1212, 626);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(194, 55);
+            this.btnClose.Size = new System.Drawing.Size(240, 55);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Fermer";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -159,10 +159,11 @@
             this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupprimer.Location = new System.Drawing.Point(925, 626);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(194, 55);
+            this.btnSupprimer.Size = new System.Drawing.Size(236, 55);
             this.btnSupprimer.TabIndex = 12;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click_1);
             // 
             // btnModifier
             // 
@@ -173,6 +174,7 @@
             this.btnModifier.TabIndex = 13;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // dataGridView1
             // 
@@ -187,6 +189,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(892, 421);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // SF_FormUser
             // 

@@ -58,5 +58,11 @@ namespace Système_de_Gestion_des_Étudiants
             SF_FormCoursMatieres formCoursMatieres  = new SF_FormCoursMatieres();
             formCoursMatieres.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SF_AdminNotesForm adminNotesForm = new SF_AdminNotesForm();
+            adminNotesForm.Show();
+        }
     }
 }

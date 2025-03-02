@@ -303,6 +303,18 @@
     <Compile Include="SF_FormClasse.Designer.cs">
       <DependentUpon>SF_FormClasse.cs</DependentUpon>
     </Compile>
+    <Compile Include="SF_FormClasseDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormClasseDE.Designer.cs">
+      <DependentUpon>SF_FormClasseDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormCoursDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormCoursDE.Designer.cs">
+      <DependentUpon>SF_FormCoursDE.cs</DependentUpon>
+    </Compile>
     <Compile Include="SF_FormCoursMatieres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +340,12 @@
       <DependentUpon>SF_FormGestionProfesseur.cs</DependentUpon>
     </Compile>
     <Compile Include="SF_FormManager.cs" />
+    <Compile Include="SF_FormMatieresDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormMatieresDE.Designer.cs">
+      <DependentUpon>SF_FormMatieresDE.cs</DependentUpon>
+    </Compile>
     <Compile Include="SF_FormProfesseur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,6 +417,12 @@
     <EmbeddedResource Include="SF_FormClasse.resx">
       <DependentUpon>SF_FormClasse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormClasseDE.resx">
+      <DependentUpon>SF_FormClasseDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormCoursDE.resx">
+      <DependentUpon>SF_FormCoursDE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SF_FormCoursMatieres.resx">
       <DependentUpon>SF_FormCoursMatieres.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormGestionProfesseur.resx">
       <DependentUpon>SF_FormGestionProfesseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormMatieresDE.resx">
+      <DependentUpon>SF_FormMatieresDE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormProfesseur.resx">
       <DependentUpon>SF_FormProfesseur.cs</DependentUpon>

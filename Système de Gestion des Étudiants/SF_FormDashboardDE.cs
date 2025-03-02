@@ -16,5 +16,24 @@ namespace Système_de_Gestion_des_Étudiants
         {
             InitializeComponent();
         }
+
+        private void btnClasse_Click(object sender, EventArgs e)
+        {
+            SF_FormClasseDE formClasseDE = new SF_FormClasseDE();
+            formClasseDE.Show();
+        }
+
+        private void btnCours_Click(object sender, EventArgs e)
+        {
+            SF_FormCoursDE formCoursDE = new SF_FormCoursDE();
+            formCoursDE.Show();
+        }
+
+        private void btnMatiere_Click(object sender, EventArgs e)
+        {
+            SF_FormMatieresDE formMatieresDE = new SF_FormMatieresDE();
+            formMatieresDE.Show();
+            
+        }
     }
 }

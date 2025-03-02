@@ -440,7 +440,7 @@ namespace Système_de_Gestion_des_Étudiants
         {
             if (dataGridView2.CurrentRow != null)
             {
-                int IdMatiere = Convert.ToInt32(dataGridView2.CurrentRow.Cells["Id"].Value); // Récupérer l'ID de la matière sélectionnée
+                int IdMatiere = Convert.ToInt32(dataGridView2.CurrentRow.Cells["Id"].Value);
 
               
                 var confirmation = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cette matière ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -516,7 +516,7 @@ namespace Système_de_Gestion_des_Étudiants
             btnAjouterMatieres.Enabled = false;
             if (e.RowIndex >= 0)
             {
-                int IdMatiere = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+                int IdMatiere = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells["Id"].Value);
 
                 using (var db = new GestionEtudiantsEntities())
                 {

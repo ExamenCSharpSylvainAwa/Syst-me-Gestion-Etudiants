@@ -5,18 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Système_de_Gestion_des_Étudiants;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace Système_de_Gestion_des_Étudiants
 {
-    public partial class SF_FormClasse : Form
+    public partial class SF_FormClasseDE : Form
     {
-        public SF_FormClasse()
+        public SF_FormClasseDE()
         {
             InitializeComponent();
         }
@@ -26,10 +24,10 @@ namespace Système_de_Gestion_des_Étudiants
             if (!Regex.IsMatch(textBox1.Text, @"^[a-zA-Z0-9]+$"))
             {
                 MessageBox.Show("Seules les lettres et chiffres sont autorisés.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-              
-            }
 
+            }
         }
+
         private void ChargerProfesseur()
         {
             using (var db = new GestionEtudiantsEntities())
@@ -48,7 +46,6 @@ namespace Système_de_Gestion_des_Étudiants
                 comboBox1.ValueMember = "Id";
             }
         }
-
         private void ChargerCours()
         {
             using (var db = new GestionEtudiantsEntities())
@@ -57,23 +54,21 @@ namespace Système_de_Gestion_des_Étudiants
                     .Select(c => new
                     {
                         c.Id,
-                        NomCours = c.NomCours 
+                        NomCours = c.NomCours
                     })
-                    .ToList();
+                .ToList();
 
-                comboBox3.DataSource = cours;
-                comboBox3.DisplayMember = "NomCours";
-                comboBox3.ValueMember = "Id";
+                comboBox2.DataSource = cours;
+                comboBox2.DisplayMember = "NomCours";
+                comboBox2.ValueMember = "Id";
             }
         }
-
-
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             using (var db = new GestionEtudiantsEntities())
             {
-                if (string.IsNullOrWhiteSpace(textBox1.Text)  || comboBox3.SelectedIndex == -1)
+                if (string.IsNullOrWhiteSpace(textBox1.Text) || comboBox2.SelectedIndex == -1)
                 {
                     MessageBox.Show("Tous les champs doivent être remplis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -87,7 +82,7 @@ namespace Système_de_Gestion_des_Étudiants
                 }
 
                 int idCours;
-                if (!int.TryParse(comboBox3.SelectedValue.ToString(), out idCours))
+                if (!int.TryParse(comboBox2.SelectedValue.ToString(), out idCours))
                 {
                     MessageBox.Show("Veuillez sélectionner un cours valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -100,7 +95,7 @@ namespace Système_de_Gestion_des_Étudiants
                     return;
                 }
 
-            
+
                 Cours cours = db.Cours.FirstOrDefault(c => c.Id == idCours);
                 if (cours == null)
                 {
@@ -118,7 +113,7 @@ namespace Système_de_Gestion_des_Étudiants
                 Classes classe = new Classes()
                 {
                     NomClasse = textBox1.Text,
-                              
+
                 };
 
                 db.Classes.Add(classe);
@@ -135,7 +130,7 @@ namespace Système_de_Gestion_des_Étudiants
 
                 textBox1.Text = string.Empty;
                 comboBox1.SelectedIndex = -1;
-                comboBox3.SelectedIndex = -1;
+                comboBox2.SelectedIndex = -1;
             }
         }
 
@@ -165,7 +160,7 @@ namespace Système_de_Gestion_des_Étudiants
                         classe.Professeurs.Clear();
 
                         int IdCours;
-                        if (comboBox3.SelectedValue != null && int.TryParse(comboBox3.SelectedValue.ToString(), out IdCours))
+                        if (comboBox2.SelectedValue != null && int.TryParse(comboBox2.SelectedValue.ToString(), out IdCours))
                         {
                             Cours cours = db.Cours.FirstOrDefault(c => c.Id == IdCours);
                             if (cours != null)
@@ -210,7 +205,7 @@ namespace Système_de_Gestion_des_Étudiants
                         refresh();
 
                         textBox1.Text = string.Empty;
-                        comboBox3.SelectedIndex = -1;
+                        comboBox2.SelectedIndex = -1;
                         comboBox1.SelectedIndex = -1;
                     }
                     else
@@ -243,11 +238,6 @@ namespace Système_de_Gestion_des_Étudiants
                 dataGridView1.DataSource = data;
             }
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-       
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
@@ -289,11 +279,12 @@ namespace Système_de_Gestion_des_Étudiants
             }
         }
 
-        private void SF_FormClasse_Load(object sender, EventArgs e)
+        private void SF_FormClasseDE_Load(object sender, EventArgs e)
         {
+
             ChargerProfesseur();
             ChargerCours();
-         
+
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             refresh();
@@ -304,12 +295,7 @@ namespace Système_de_Gestion_des_Étudiants
             this.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             btnAjouter.Enabled = false;
             if (e.RowIndex >= 0)
@@ -337,11 +323,11 @@ namespace Système_de_Gestion_des_Étudiants
                         var cours = classes.Cours.FirstOrDefault();
                         if (cours != null)
                         {
-                            comboBox3.SelectedValue = cours.Id;
+                            comboBox2.SelectedValue = cours.Id;
                         }
                         else
                         {
-                            comboBox3.SelectedIndex = -1;
+                            comboBox2.SelectedIndex = -1;
                         }
                     }
                     else

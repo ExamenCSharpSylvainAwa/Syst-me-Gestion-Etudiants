@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SF_FormDashboardDE));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnClasse = new System.Windows.Forms.Button();
-            this.btnResultat = new System.Windows.Forms.Button();
-            this.btnRapport = new System.Windows.Forms.Button();
-            this.btnProfesseur = new System.Windows.Forms.Button();
-            this.btnMatiere = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCours = new System.Windows.Forms.Button();
+            this.btnMatiere = new System.Windows.Forms.Button();
+            this.btnProfesseur = new System.Windows.Forms.Button();
+            this.btnRapport = new System.Windows.Forms.Button();
+            this.btnResultat = new System.Windows.Forms.Button();
+            this.btnClasse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,16 +68,6 @@
             this.splitContainer1.SplitterDistance = 340;
             this.splitContainer1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Directeur d\'étude";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -88,35 +78,37 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnClasse
+            // label1
             // 
-            this.btnClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClasse.Location = new System.Drawing.Point(100, 191);
-            this.btnClasse.Name = "btnClasse";
-            this.btnClasse.Size = new System.Drawing.Size(283, 92);
-            this.btnClasse.TabIndex = 0;
-            this.btnClasse.Text = "Classes";
-            this.btnClasse.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(307, 40);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Directeur d\'étude";
             // 
-            // btnResultat
+            // btnCours
             // 
-            this.btnResultat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResultat.Location = new System.Drawing.Point(542, 518);
-            this.btnResultat.Name = "btnResultat";
-            this.btnResultat.Size = new System.Drawing.Size(283, 92);
-            this.btnResultat.TabIndex = 1;
-            this.btnResultat.Text = "Résultats";
-            this.btnResultat.UseVisualStyleBackColor = true;
+            this.btnCours.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCours.Location = new System.Drawing.Point(542, 191);
+            this.btnCours.Name = "btnCours";
+            this.btnCours.Size = new System.Drawing.Size(283, 92);
+            this.btnCours.TabIndex = 5;
+            this.btnCours.Text = "Cours";
+            this.btnCours.UseVisualStyleBackColor = true;
+            this.btnCours.Click += new System.EventHandler(this.btnCours_Click);
             // 
-            // btnRapport
+            // btnMatiere
             // 
-            this.btnRapport.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRapport.Location = new System.Drawing.Point(1007, 518);
-            this.btnRapport.Name = "btnRapport";
-            this.btnRapport.Size = new System.Drawing.Size(283, 92);
-            this.btnRapport.TabIndex = 2;
-            this.btnRapport.Text = "Rapports";
-            this.btnRapport.UseVisualStyleBackColor = true;
+            this.btnMatiere.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMatiere.Location = new System.Drawing.Point(1007, 191);
+            this.btnMatiere.Name = "btnMatiere";
+            this.btnMatiere.Size = new System.Drawing.Size(283, 92);
+            this.btnMatiere.TabIndex = 4;
+            this.btnMatiere.Text = "Matières";
+            this.btnMatiere.UseVisualStyleBackColor = true;
+            this.btnMatiere.Click += new System.EventHandler(this.btnMatiere_Click);
             // 
             // btnProfesseur
             // 
@@ -128,25 +120,36 @@
             this.btnProfesseur.Text = "Professeurs";
             this.btnProfesseur.UseVisualStyleBackColor = true;
             // 
-            // btnMatiere
+            // btnRapport
             // 
-            this.btnMatiere.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMatiere.Location = new System.Drawing.Point(1007, 191);
-            this.btnMatiere.Name = "btnMatiere";
-            this.btnMatiere.Size = new System.Drawing.Size(283, 92);
-            this.btnMatiere.TabIndex = 4;
-            this.btnMatiere.Text = "Matières";
-            this.btnMatiere.UseVisualStyleBackColor = true;
+            this.btnRapport.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRapport.Location = new System.Drawing.Point(1007, 518);
+            this.btnRapport.Name = "btnRapport";
+            this.btnRapport.Size = new System.Drawing.Size(283, 92);
+            this.btnRapport.TabIndex = 2;
+            this.btnRapport.Text = "Rapports";
+            this.btnRapport.UseVisualStyleBackColor = true;
             // 
-            // btnCours
+            // btnResultat
             // 
-            this.btnCours.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCours.Location = new System.Drawing.Point(542, 191);
-            this.btnCours.Name = "btnCours";
-            this.btnCours.Size = new System.Drawing.Size(283, 92);
-            this.btnCours.TabIndex = 5;
-            this.btnCours.Text = "Cours";
-            this.btnCours.UseVisualStyleBackColor = true;
+            this.btnResultat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultat.Location = new System.Drawing.Point(542, 518);
+            this.btnResultat.Name = "btnResultat";
+            this.btnResultat.Size = new System.Drawing.Size(283, 92);
+            this.btnResultat.TabIndex = 1;
+            this.btnResultat.Text = "Résultats";
+            this.btnResultat.UseVisualStyleBackColor = true;
+            // 
+            // btnClasse
+            // 
+            this.btnClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClasse.Location = new System.Drawing.Point(100, 191);
+            this.btnClasse.Name = "btnClasse";
+            this.btnClasse.Size = new System.Drawing.Size(283, 92);
+            this.btnClasse.TabIndex = 0;
+            this.btnClasse.Text = "Classes";
+            this.btnClasse.UseVisualStyleBackColor = true;
+            this.btnClasse.Click += new System.EventHandler(this.btnClasse_Click);
             // 
             // SF_FormDashboardDE
             // 

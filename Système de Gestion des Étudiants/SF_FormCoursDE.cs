@@ -199,6 +199,7 @@ namespace Système_de_Gestion_des_Étudiants
 
                         MessageBox.Show("Cours et matières associés modifiés avec succès !");
                         refresh();
+                        btnAjouter.Enabled = true;
 
                         textBox1.Text = string.Empty;
                         textBox2.Text = string.Empty;

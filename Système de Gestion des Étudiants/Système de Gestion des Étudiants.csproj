@@ -352,6 +352,18 @@
     <Compile Include="SF_FormProfesseur.Designer.cs">
       <DependentUpon>SF_FormProfesseur.cs</DependentUpon>
     </Compile>
+    <Compile Include="SF_FormProfesseurDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormProfesseurDE.Designer.cs">
+      <DependentUpon>SF_FormProfesseurDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormResulatsDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormResulatsDE.Designer.cs">
+      <DependentUpon>SF_FormResulatsDE.cs</DependentUpon>
+    </Compile>
     <Compile Include="SF_FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -440,6 +452,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormProfesseur.resx">
       <DependentUpon>SF_FormProfesseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormProfesseurDE.resx">
+      <DependentUpon>SF_FormProfesseurDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormResulatsDE.resx">
+      <DependentUpon>SF_FormResulatsDE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormUser.resx">
       <DependentUpon>SF_FormUser.cs</DependentUpon>

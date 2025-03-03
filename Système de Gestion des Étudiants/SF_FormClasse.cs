@@ -23,11 +23,7 @@ namespace Système_de_Gestion_des_Étudiants
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(textBox1.Text, @"^[a-zA-Z0-9]+$"))
-            {
-                MessageBox.Show("Seules les lettres et chiffres sont autorisés.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-              
-            }
+          
 
         }
         private void ChargerProfesseur()
@@ -208,6 +204,7 @@ namespace Système_de_Gestion_des_Étudiants
 
                         MessageBox.Show("Classe, cours et professeur modifiés avec succès !");
                         refresh();
+                        btnAjouter.Enabled = true;
 
                         textBox1.Text = string.Empty;
                         comboBox3.SelectedIndex = -1;
@@ -350,6 +347,14 @@ namespace Système_de_Gestion_des_Étudiants
                     }
                 }
             }
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Regex.IsMatch(textBox1.Text, @"^[a-zA-Z0-9]+$"))
+            {
+                MessageBox.Show("Seules les lettres et chiffres sont autorisés.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Cancel = true;            }
         }
     }
 }

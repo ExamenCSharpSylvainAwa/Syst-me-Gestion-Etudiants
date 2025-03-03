@@ -191,6 +191,7 @@ namespace Système_de_Gestion_des_Étudiants
 
                     MessageBox.Show("Matière modifiée avec succès !");
                     rafresh();
+                    btnAjouter.Enabled = true;
 
                     textBox1.Text = string.Empty;
                 }

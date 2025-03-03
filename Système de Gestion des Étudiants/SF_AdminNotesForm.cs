@@ -313,6 +313,7 @@ namespace Système_de_Gestion_des_Étudiants
                             db.SaveChanges();
                             MessageBox.Show("Note modifiée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             refresh();
+                            btnAjouter.Enabled = true;
                         }
                         catch (Exception ex)
                         {

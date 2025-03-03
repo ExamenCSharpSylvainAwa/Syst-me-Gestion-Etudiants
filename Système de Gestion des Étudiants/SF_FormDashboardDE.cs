@@ -35,5 +35,17 @@ namespace Système_de_Gestion_des_Étudiants
             formMatieresDE.Show();
             
         }
+
+        private void btnProfesseur_Click(object sender, EventArgs e)
+        {
+            SF_FormProfesseurDE formProfesseurDE = new SF_FormProfesseurDE();
+            formProfesseurDE.Show();
+        }
+
+        private void btnResultat_Click(object sender, EventArgs e)
+        {
+            SF_FormResulatsDE formResulatsDE = new SF_FormResulatsDE();
+            formResulatsDE.Show();
+        }
     }
 }

@@ -198,6 +198,7 @@ namespace Système_de_Gestion_des_Étudiants
                         MessageBox.Show("Utilisateur modifié avec succès.");
 
                         refresh();
+                        btnAjouter.Enabled = true;
 
                         txtUsername.Text = string.Empty;
                         txtPassword.Text = string.Empty;

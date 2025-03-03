@@ -315,7 +315,8 @@ namespace Système_de_Gestion_des_Étudiants
                         db.SaveChanges();
 
                         MessageBox.Show("Cours et matières associés modifiés avec succès !");
-                        refresh(); 
+                        refresh();
+                        btnAjouterCours.Enabled = true;
 
                         textBox1.Text = string.Empty;
                         textBox2.Text = string.Empty;
@@ -425,7 +426,8 @@ namespace Système_de_Gestion_des_Étudiants
                     db.SaveChanges();
 
                     MessageBox.Show("Matière modifiée avec succès !");
-                    rafresh(); 
+                    rafresh();
+                    btnAjouterMatieres.Enabled = true;
 
                     textBox3.Text = string.Empty; 
                 }

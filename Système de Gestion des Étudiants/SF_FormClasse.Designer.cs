@@ -71,6 +71,7 @@
             this.textBox1.Size = new System.Drawing.Size(255, 54);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // btnAjouter
             // 

@@ -203,6 +203,7 @@ namespace Système_de_Gestion_des_Étudiants
 
                         MessageBox.Show("Classe, cours et professeur modifiés avec succès !");
                         refresh();
+                        btnAjouter.Enabled = true;
 
                         textBox1.Text = string.Empty;
                         comboBox2.SelectedIndex = -1;

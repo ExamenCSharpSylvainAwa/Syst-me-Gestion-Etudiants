@@ -295,7 +295,8 @@ namespace Système_de_Gestion_des_Étudiants
                         db.SaveChanges();
 
                         MessageBox.Show("Étudiant modifié avec succès !");
-                        refresh(); 
+                        refresh();
+                        btnAjouter.Enabled = true;
                     }
                     else
                     {

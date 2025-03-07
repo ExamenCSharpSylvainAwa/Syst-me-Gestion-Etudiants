@@ -16,5 +16,24 @@ namespace Système_de_Gestion_des_Étudiants
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SF_LoginForm loginForm = new SF_LoginForm();
+            loginForm.Show();
+        }
+
+        private void btnEtudiant_Click(object sender, EventArgs e)
+        {
+            SF_FormAgentEtudiants formAgentEtudiants = new SF_FormAgentEtudiants();
+            formAgentEtudiants.Show();
+        }
+
+        private void btnNotes_Click(object sender, EventArgs e)
+        {
+            SF_FormAgentNotes formAgentNotes = new SF_FormAgentNotes();
+            formAgentNotes.Show();
+        }
     }
 }

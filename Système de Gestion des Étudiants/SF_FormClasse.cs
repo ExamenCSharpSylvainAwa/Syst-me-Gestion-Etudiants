@@ -233,7 +233,7 @@ namespace Système_de_Gestion_des_Étudiants
                     classes.Id,
                     classes.NomClasse,
                     NomProfesseur = string.Join(", ", classes.Professeurs.Select(p => $"{p.Nom} {p.Prenom} ({p.Telephone})")),
-                    NomCours = string.Join(", ", classes.Cours.Select(c => $"{c.NomCours} )"))
+                    NomCours = string.Join(", ", classes.Cours.Select(c => $"{c.NomCours} "))
 
                 }).ToList();
 

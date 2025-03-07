@@ -47,5 +47,12 @@ namespace Système_de_Gestion_des_Étudiants
             SF_FormResulatsDE formResulatsDE = new SF_FormResulatsDE();
             formResulatsDE.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SF_LoginForm loginForm = new SF_LoginForm();
+            loginForm.Show();
+        }
     }
 }

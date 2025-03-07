@@ -9,24 +9,65 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Système_de_Gestion_des_Étudiants
 {
-    public partial class SF_AdminNotesForm : Form
+    public partial class SF_FormProfesseurNotes : Form
     {
-        public SF_AdminNotesForm()
+       
+
+        public SF_FormProfesseurNotes(){
+
+                 InitializeComponent();
+        }
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            InitializeComponent();
+
+        }
+     
+
+        private void SF_FormProfesseurNotes_Load(object sender, EventArgs e)
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            refresh();
+            ChargerEtudiant();
+            ChargerMatiere();
+          
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+        private void ChargerEtudiant()
+        {
+            using (var db = new GestionEtudiantsEntities())
+            {
+                var etudiants = db.Etudiants
+                    .Select(et => new
+                    {
+                        et.Id,
+                        NomComplet = et.Matricule + " - " + et.Prenom + " " + et.Nom
+                    })
+                    .ToList();
+
+                comboBox1.DataSource = etudiants;
+                comboBox1.DisplayMember = "NomComplet";
+                comboBox1.ValueMember = "Id";
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void ChargerMatiere()
         {
-           
+            using (var db = new GestionEtudiantsEntities())
+            {
+                comboBox2.DataSource = db.Matieres.ToList();
+                comboBox2.DisplayMember = "NomMatiere";
+                comboBox2.ValueMember = "Id";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void textBox1_Validating(object sender, CancelEventArgs e)
@@ -56,47 +97,16 @@ namespace Système_de_Gestion_des_Étudiants
             }
         }
 
-        private void ChargerEtudiant()
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            using (var db = new GestionEtudiantsEntities())
-            {
-                var etudiants = db.Etudiants
-                    .Select(et => new
-                    {
-                        et.Id,
-                        NomComplet = et.Matricule + " - " + et.Prenom + " " + et.Nom
-                    })
-                    .ToList();
 
-                comboBox1.DataSource = etudiants;
-                comboBox1.DisplayMember = "NomComplet"; 
-                comboBox1.ValueMember = "Id"; 
-            }
-        }
-
-        private void ChargerMatiere()
-        {
-            using (var db = new GestionEtudiantsEntities())
-            {
-                comboBox2.DataSource = db.Matieres.ToList();
-                comboBox2.DisplayMember = "NomMatiere";
-                comboBox2.ValueMember = "Id";
-            }
-        }
-
-        private void SF_AdminNotesForm_Load(object sender, EventArgs e)
-        {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            refresh();
-            ChargerEtudiant();
-            ChargerMatiere();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) ||
-                comboBox1.SelectedIndex == -1 ||
-                comboBox2.SelectedIndex == -1)
+               comboBox1.SelectedIndex == -1 ||
+               comboBox2.SelectedIndex == -1)
             {
                 MessageBox.Show("Tous les champs doivent être remplis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -161,11 +171,11 @@ namespace Système_de_Gestion_des_Étudiants
                 var data = db.Notes
                     .Select(n => new
                     {
-                        n.Id,  
-                        Matricule = n.Etudiants.Matricule,  
-                        NomPrenom = n.Etudiants.Prenom + " " + n.Etudiants.Nom,  
-                        Matiere = n.Matieres.NomMatiere, 
-                        n.Note  
+                        n.Id,
+                        Matricule = n.Etudiants.Matricule,
+                        NomPrenom = n.Etudiants.Prenom + " " + n.Etudiants.Nom,
+                        Matiere = n.Matieres.NomMatiere,
+                        n.Note
                     })
                     .ToList();
 
@@ -177,17 +187,6 @@ namespace Système_de_Gestion_des_Étudiants
                 dataGridView1.Columns["Matiere"].HeaderText = "Matière";
                 dataGridView1.Columns["Note"].HeaderText = "Note";
             }
-        }
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnFermer_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -204,7 +203,7 @@ namespace Système_de_Gestion_des_Étudiants
                 {
                     var note = db.Notes.Include("Etudiants")
                                        .Include("Matieres")
-                                       .FirstOrDefault(n => n.Id == IdNote); 
+                                       .FirstOrDefault(n => n.Id == IdNote);
 
                     if (note != null)
                     {
@@ -236,11 +235,9 @@ namespace Système_de_Gestion_des_Étudiants
             }
         }
 
-
-
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0) 
+            if (dataGridView1.SelectedRows.Count > 0)
             {
                 int IdNote = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
 
@@ -263,7 +260,7 @@ namespace Système_de_Gestion_des_Étudiants
                                 db.SaveChanges();
 
                                 MessageBox.Show("Note supprimée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                refresh(); 
+                                refresh();
                             }
                             catch (Exception ex)
                             {
@@ -283,10 +280,9 @@ namespace Système_de_Gestion_des_Étudiants
             }
         }
 
-
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0) 
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 int IdNote = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
 
@@ -332,122 +328,6 @@ namespace Système_de_Gestion_des_Étudiants
             }
         }
 
-        private void btnMoyenne_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex != -1)
-            {
-                int idEtudiant = Convert.ToInt32(comboBox1.SelectedValue);
 
-                using (var db = new GestionEtudiantsEntities())
-                {
-                    var etudiant = db.Etudiants
-                                     .Where(et => et.Id == idEtudiant)
-                                     .Select(et => new
-                                     {
-                                         et.Matricule,
-                                         NomPrenom = et.Prenom + " " + et.Nom
-                                     })
-                                     .FirstOrDefault();
-
-                    if (etudiant != null)
-                    {
-                        var notes = db.Notes
-                                      .Where(n => n.IdEtudiant == idEtudiant)
-                                      .ToList();
-
-                        if (notes.Any())
-                        {
-                            var moyenne = notes.Average(n => n.Note);
-
-                            MessageBox.Show(
-                                $"Étudiant : {etudiant.NomPrenom}\nMatricule : {etudiant.Matricule}\nMoyenne : {moyenne:0.00}",
-                                "Moyenne", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Aucune note trouvée pour cet étudiant.",
-                                            "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("L'étudiant sélectionné n'existe pas.",
-                                        "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Veuillez sélectionner un étudiant.",
-                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void btnReleve_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex != -1)
-            {
-                int idEtudiant = Convert.ToInt32(comboBox1.SelectedValue);
-
-                using (var db = new GestionEtudiantsEntities())
-                {
-                    var etudiant = db.Etudiants
-                                     .Where(et => et.Id == idEtudiant)
-                                     .Select(et => new
-                                     {
-                                         et.Matricule,
-                                         NomPrenom = et.Prenom + " " + et.Nom
-                                     })
-                                     .FirstOrDefault();
-
-                    if (etudiant != null)
-                    {
-                        var notes = db.Notes
-                                      .Where(n => n.IdEtudiant == idEtudiant)
-                                      .GroupBy(n => n.IdMatiere)
-                                      .Select(g => new
-                                      {
-                                          Matiere = g.FirstOrDefault().Matieres.NomMatiere,
-                                          Moyenne = g.Average(n => n.Note)
-                                      })
-                                      .ToList();
-
-                        if (notes.Any())
-                        {
-                            double moyenneGenerale = notes.Average(n => n.Moyenne);
-
-                            StringBuilder sb = new StringBuilder();
-                            sb.AppendLine($"📌 Étudiant : {etudiant.NomPrenom}");
-                            sb.AppendLine($"📌 Matricule : {etudiant.Matricule}\n");
-                            sb.AppendLine("🔹 **Moyennes par matière** :");
-
-                            foreach (var note in notes)
-                            {
-                                sb.AppendLine($"- {note.Matiere} : {note.Moyenne:0.00}");
-                            }
-
-                            sb.AppendLine($"\n📊 **Moyenne Générale** : {moyenneGenerale:0.00}");
-
-                            MessageBox.Show(sb.ToString(), "Relevé de Notes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Aucune note trouvée pour cet étudiant.",
-                                            "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("L'étudiant sélectionné n'existe pas.",
-                                        "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Veuillez sélectionner un étudiant.",
-                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
     }
 }

@@ -137,6 +137,7 @@
             this.btnRapport.TabIndex = 8;
             this.btnRapport.Text = "Rapports";
             this.btnRapport.UseVisualStyleBackColor = true;
+            this.btnRapport.Click += new System.EventHandler(this.btnRapport_Click);
             // 
             // button2
             // 

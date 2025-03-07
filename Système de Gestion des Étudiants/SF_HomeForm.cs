@@ -64,5 +64,11 @@ namespace Système_de_Gestion_des_Étudiants
             SF_AdminNotesForm adminNotesForm = new SF_AdminNotesForm();
             adminNotesForm.Show();
         }
+
+        private void btnRapport_Click(object sender, EventArgs e)
+        {
+            SF_FormAdminRapport formAdminRapport = new SF_FormAdminRapport();
+            formAdminRapport.Show();
+        }
     }
 }

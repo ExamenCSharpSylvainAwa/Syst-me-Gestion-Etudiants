@@ -84,7 +84,7 @@ namespace Système_de_Gestion_des_Étudiants
 
                 var message = MessageResource.Create(
                     to: new PhoneNumber(formattedPhoneNumber),
-                    from: new PhoneNumber("+221 77 406 58 59"),
+                    from: new PhoneNumber("+221774065859"),
                     body: $"Ton code OTP est : {otpCode}"
                 );
 

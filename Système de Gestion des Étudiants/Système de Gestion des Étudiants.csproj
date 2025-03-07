@@ -36,6 +36,10 @@
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DotNetEnv, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetEnv.3.1.1\lib\netstandard1.3\DotNetEnv.dll</HintPath>
     </Reference>
@@ -245,7 +249,9 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -285,17 +291,41 @@
     <Compile Include="OTPVerificationForm.Designer.cs">
       <DependentUpon>OTPVerificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReleveDeNotesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReleveDeNotesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SF_AdminNotesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SF_AdminNotesForm.Designer.cs">
       <DependentUpon>SF_AdminNotesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SF_FormAdminRapport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormAdminRapport.Designer.cs">
+      <DependentUpon>SF_FormAdminRapport.cs</DependentUpon>
+    </Compile>
     <Compile Include="SF_FormAgent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SF_FormAgent.Designer.cs">
       <DependentUpon>SF_FormAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormAgentEtudiants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormAgentEtudiants.Designer.cs">
+      <DependentUpon>SF_FormAgentEtudiants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormAgentNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormAgentNotes.Designer.cs">
+      <DependentUpon>SF_FormAgentNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="SF_FormClasse.cs">
       <SubType>Form</SubType>
@@ -357,6 +387,18 @@
     </Compile>
     <Compile Include="SF_FormProfesseurDE.Designer.cs">
       <DependentUpon>SF_FormProfesseurDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormProfesseurEtudiants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormProfesseurEtudiants.Designer.cs">
+      <DependentUpon>SF_FormProfesseurEtudiants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SF_FormProfesseurNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SF_FormProfesseurNotes.Designer.cs">
+      <DependentUpon>SF_FormProfesseurNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="SF_FormResulatsDE.cs">
       <SubType>Form</SubType>
@@ -420,11 +462,24 @@
     <EmbeddedResource Include="OTPVerificationForm.resx">
       <DependentUpon>OTPVerificationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReleveDeNotesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReleveDeNotesReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SF_AdminNotesForm.resx">
       <DependentUpon>SF_AdminNotesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormAdminRapport.resx">
+      <DependentUpon>SF_FormAdminRapport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SF_FormAgent.resx">
       <DependentUpon>SF_FormAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormAgentEtudiants.resx">
+      <DependentUpon>SF_FormAgentEtudiants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormAgentNotes.resx">
+      <DependentUpon>SF_FormAgentNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormClasse.resx">
       <DependentUpon>SF_FormClasse.cs</DependentUpon>
@@ -455,6 +510,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormProfesseurDE.resx">
       <DependentUpon>SF_FormProfesseurDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormProfesseurEtudiants.resx">
+      <DependentUpon>SF_FormProfesseurEtudiants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SF_FormProfesseurNotes.resx">
+      <DependentUpon>SF_FormProfesseurNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SF_FormResulatsDE.resx">
       <DependentUpon>SF_FormResulatsDE.cs</DependentUpon>
@@ -514,6 +575,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

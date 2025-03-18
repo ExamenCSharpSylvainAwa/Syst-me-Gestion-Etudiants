@@ -35,5 +35,30 @@ namespace Système_de_Gestion_des_Étudiants
             SF_FormAgentNotes formAgentNotes = new SF_FormAgentNotes();
             formAgentNotes.Show();
         }
+
+        private void btnEtudiant_MouseEnter(object sender, EventArgs e)
+        {
+            btnEtudiant.BackColor = Color.FromArgb(0, 188, 212); // Couleur au survol du bouton Etudiant
+            btnEtudiant.ForeColor = Color.White; // Couleur du texte
+        }
+
+        private void btnEtudiant_MouseLeave(object sender, EventArgs e)
+        {
+            btnEtudiant.BackColor = Color.White; // Couleur d'origine
+            btnEtudiant.ForeColor = Color.Black; // Couleur du texte d'origine
+        }
+
+        private void btnNotes_MouseEnter(object sender, EventArgs e)
+        {
+            btnNotes.BackColor = Color.FromArgb(233, 30, 99); // Couleur au survol du bouton Notes
+            btnNotes.ForeColor = Color.White; // Couleur du texte
+        }
+
+        private void btnNotes_MouseLeave(object sender, EventArgs e)
+        {
+            btnNotes.BackColor = Color.White; // Couleur d'origine
+            btnNotes.ForeColor = Color.Black; // Couleur du texte d'origine
+        }
+
     }
 }

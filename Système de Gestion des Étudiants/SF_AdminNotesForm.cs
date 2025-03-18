@@ -449,5 +449,78 @@ namespace Système_de_Gestion_des_Étudiants
                                 "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnAjouter_MouseEnter(object sender, EventArgs e)
+        {
+            btnAjouter.BackColor = Color.FromArgb(0, 188, 212); // Couleur au survol du bouton Ajouter
+            btnAjouter.ForeColor = Color.White;
+        }
+
+        private void btnAjouter_MouseLeave(object sender, EventArgs e)
+        {
+            btnAjouter.BackColor = Color.White; // Couleur d'origine
+            btnAjouter.ForeColor = Color.Black;
+        }
+
+        private void btnModifier_MouseEnter(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.FromArgb(233, 30, 99); // Couleur au survol du bouton Modifier
+            btnModifier.ForeColor = Color.White;
+        }
+
+        private void btnModifier_MouseLeave(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.White; // Couleur d'origine
+            btnModifier.ForeColor = Color.Black;
+        }
+
+        private void btnSupprimer_MouseEnter(object sender, EventArgs e)
+        {
+            btnSupprimer.BackColor = Color.FromArgb(255, 87, 34); // Couleur au survol du bouton Supprimer
+            btnSupprimer.ForeColor = Color.White;
+        }
+
+        private void btnSupprimer_MouseLeave(object sender, EventArgs e)
+        {
+            btnSupprimer.BackColor = Color.White; // Couleur d'origine
+            btnSupprimer.ForeColor = Color.Black;
+        }
+
+        private void btnMoyenne_MouseEnter(object sender, EventArgs e)
+        {
+            btnMoyenne.BackColor = Color.FromArgb(76, 175, 80); // Couleur au survol du bouton Moyenne
+            btnMoyenne.ForeColor = Color.White;
+        }
+
+        private void btnMoyenne_MouseLeave(object sender, EventArgs e)
+        {
+            btnMoyenne.BackColor = Color.White; // Couleur d'origine
+            btnMoyenne.ForeColor = Color.Black;
+        }
+
+        private void btnReleve_MouseEnter(object sender, EventArgs e)
+        {
+            btnReleve.BackColor = Color.FromArgb(255, 235, 59); // Couleur au survol du bouton Releve
+            btnReleve.ForeColor = Color.White;
+        }
+
+        private void btnReleve_MouseLeave(object sender, EventArgs e)
+        {
+            btnReleve.BackColor = Color.White; // Couleur d'origine
+            btnReleve.ForeColor = Color.Black;
+        }
+
+        private void btnFermer_MouseEnter(object sender, EventArgs e)
+        {
+            btnFermer.BackColor = Color.FromArgb(121, 85, 72); // Couleur au survol du bouton Fermer
+            btnFermer.ForeColor = Color.White;
+        }
+
+        private void btnFermer_MouseLeave(object sender, EventArgs e)
+        {
+            btnFermer.BackColor = Color.White; // Couleur d'origine
+            btnFermer.ForeColor = Color.Black;
+        }
+
     }
 }

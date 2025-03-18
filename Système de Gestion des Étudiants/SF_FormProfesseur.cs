@@ -41,5 +41,42 @@ namespace Système_de_Gestion_des_Étudiants
             SF_LoginForm loginForm = new SF_LoginForm();
             loginForm.Show();
         }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Red;
+            button2.ForeColor = Color.White;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.White;
+            button2.ForeColor = Color.Red;
+        }
+
+        private void btnNote_MouseEnter(object sender, EventArgs e)
+        {
+            btnNote.BackColor = Color.SkyBlue;
+            btnNote.ForeColor = Color.White;
+        }
+
+        private void btnNote_MouseLeave(object sender, EventArgs e)
+        {
+            btnNote.BackColor = Color.LightGray;
+            btnNote.ForeColor = Color.Black;
+        }
+
+        private void btnEtudiant_MouseEnter(object sender, EventArgs e)
+        {
+            btnEtudiant.BackColor = Color.LightGreen;
+            btnEtudiant.ForeColor = Color.White;
+        }
+
+        private void btnEtudiant_MouseLeave(object sender, EventArgs e)
+        {
+            btnEtudiant.BackColor = Color.LightGray;
+            btnEtudiant.ForeColor = Color.Black;
+        }
+
     }
 }

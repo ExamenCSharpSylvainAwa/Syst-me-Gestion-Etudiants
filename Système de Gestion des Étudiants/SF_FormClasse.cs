@@ -356,5 +356,54 @@ namespace Système_de_Gestion_des_Étudiants
                 MessageBox.Show("Seules les lettres et chiffres sont autorisés.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true;            }
         }
+
+        private void btnAjouter_MouseEnter(object sender, EventArgs e)
+        {
+            btnAjouter.BackColor = Color.LightSkyBlue; 
+            btnAjouter.ForeColor = Color.White;        
+        }
+
+        private void btnAjouter_MouseLeave(object sender, EventArgs e)
+        {
+            btnAjouter.BackColor = Color.LightGray;   
+            btnAjouter.ForeColor = Color.Black;        
+        }
+
+        private void btnModifier_MouseEnter(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.LightGreen;  
+            btnModifier.ForeColor = Color.White;       
+        }
+
+        private void btnModifier_MouseLeave(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.LightGray;  
+            btnModifier.ForeColor = Color.Black;        
+        }
+
+        private void btnSupprimer_MouseEnter(object sender, EventArgs e)
+        {
+            btnSupprimer.BackColor = Color.IndianRed;  
+            btnSupprimer.ForeColor = Color.White;      
+        }
+
+        private void btnSupprimer_MouseLeave(object sender, EventArgs e)
+        {
+            btnSupprimer.BackColor = Color.LightGray;  
+            btnSupprimer.ForeColor = Color.Black;     
+        }
+
+        private void btnFermer_MouseEnter(object sender, EventArgs e)
+        {
+            btnFermer.BackColor = Color.DimGray;       
+            btnFermer.ForeColor = Color.White;        
+        }
+
+        private void btnFermer_MouseLeave(object sender, EventArgs e)
+        {
+            btnFermer.BackColor = Color.LightGray;    
+            btnFermer.ForeColor = Color.Black;       
+        }
+
     }
 }

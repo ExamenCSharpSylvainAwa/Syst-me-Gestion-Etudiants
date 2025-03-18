@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SF_FormDashboardDE));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCours = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.btnRapport = new System.Windows.Forms.Button();
             this.btnResultat = new System.Windows.Forms.Button();
             this.btnClasse = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +70,20 @@
             this.splitContainer1.SplitterDistance = 340;
             this.splitContainer1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(12, 701);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(303, 47);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Déconnexion";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -100,6 +114,8 @@
             this.btnCours.Text = "Cours";
             this.btnCours.UseVisualStyleBackColor = true;
             this.btnCours.Click += new System.EventHandler(this.btnCours_Click);
+            this.btnCours.MouseEnter += new System.EventHandler(this.btnCours_MouseEnter);
+            this.btnCours.MouseLeave += new System.EventHandler(this.btnCours_MouseLeave);
             // 
             // btnMatiere
             // 
@@ -111,6 +127,8 @@
             this.btnMatiere.Text = "Matières";
             this.btnMatiere.UseVisualStyleBackColor = true;
             this.btnMatiere.Click += new System.EventHandler(this.btnMatiere_Click);
+            this.btnMatiere.MouseEnter += new System.EventHandler(this.btnMatiere_MouseEnter);
+            this.btnMatiere.MouseLeave += new System.EventHandler(this.btnMatiere_MouseLeave);
             // 
             // btnProfesseur
             // 
@@ -122,6 +140,8 @@
             this.btnProfesseur.Text = "Professeurs";
             this.btnProfesseur.UseVisualStyleBackColor = true;
             this.btnProfesseur.Click += new System.EventHandler(this.btnProfesseur_Click);
+            this.btnProfesseur.MouseEnter += new System.EventHandler(this.btnProfesseur_MouseEnter);
+            this.btnProfesseur.MouseLeave += new System.EventHandler(this.btnProfesseur_MouseLeave);
             // 
             // btnRapport
             // 
@@ -132,6 +152,8 @@
             this.btnRapport.TabIndex = 2;
             this.btnRapport.Text = "Rapports";
             this.btnRapport.UseVisualStyleBackColor = true;
+            this.btnRapport.MouseEnter += new System.EventHandler(this.btnRapport_MouseEnter);
+            this.btnRapport.MouseLeave += new System.EventHandler(this.btnRapport_MouseLeave);
             // 
             // btnResultat
             // 
@@ -143,6 +165,8 @@
             this.btnResultat.Text = "Résultats";
             this.btnResultat.UseVisualStyleBackColor = true;
             this.btnResultat.Click += new System.EventHandler(this.btnResultat_Click);
+            this.btnResultat.MouseEnter += new System.EventHandler(this.btnResultat_MouseEnter);
+            this.btnResultat.MouseLeave += new System.EventHandler(this.btnResultat_MouseLeave);
             // 
             // btnClasse
             // 
@@ -154,18 +178,8 @@
             this.btnClasse.Text = "Classes";
             this.btnClasse.UseVisualStyleBackColor = true;
             this.btnClasse.Click += new System.EventHandler(this.btnClasse_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(12, 701);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(303, 47);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Déconnexion";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnClasse.MouseEnter += new System.EventHandler(this.btnClasse_MouseEnter);
+            this.btnClasse.MouseLeave += new System.EventHandler(this.btnClasse_MouseLeave);
             // 
             // SF_FormDashboardDE
             // 

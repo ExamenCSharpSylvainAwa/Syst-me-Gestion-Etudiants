@@ -577,5 +577,66 @@ namespace Système_de_Gestion_des_Étudiants
                 dateTimePicker1.Value = DateTime.Now;
             }
         }
+
+        private void btnAjouter_MouseEnter(object sender, EventArgs e)
+        {
+            btnAjouter.BackColor = Color.FromArgb(33, 150, 243); // Couleur au survol
+            btnAjouter.ForeColor = Color.White; // Couleur du texte
+        }
+
+        private void btnAjouter_MouseLeave(object sender, EventArgs e)
+        {
+            btnAjouter.BackColor = Color.White; // Couleur d'origine
+            btnAjouter.ForeColor = Color.Black; // Couleur du texte d'origine
+        }
+
+        private void btnModifier_MouseEnter(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.FromArgb(33, 150, 243);
+            btnModifier.ForeColor = Color.White;
+        }
+
+        private void btnModifier_MouseLeave(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.White;
+            btnModifier.ForeColor = Color.Black;
+        }
+
+        private void btnSupprimer_MouseEnter(object sender, EventArgs e)
+        {
+            btnSupprimer.BackColor = Color.FromArgb(244, 67, 54); // Couleur de suppression
+            btnSupprimer.ForeColor = Color.White;
+        }
+
+        private void btnSupprimer_MouseLeave(object sender, EventArgs e)
+        {
+            btnSupprimer.BackColor = Color.White;
+            btnSupprimer.ForeColor = Color.Black;
+        }
+
+        private void btnRechercher_MouseEnter(object sender, EventArgs e)
+        {
+            btnRechercher.BackColor = Color.FromArgb(76, 175, 80); // Couleur pour rechercher
+            btnRechercher.ForeColor = Color.White;
+        }
+
+        private void btnRechercher_MouseLeave(object sender, EventArgs e)
+        {
+            btnRechercher.BackColor = Color.White;
+            btnRechercher.ForeColor = Color.Black;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.FromArgb(255, 193, 7); // Couleur pour le bouton 2
+            button2.ForeColor = Color.Black;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.White;
+            button2.ForeColor = Color.Black;
+        }
+
     }
 }

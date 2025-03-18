@@ -299,6 +299,8 @@
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            this.btnAjouter.MouseEnter += new System.EventHandler(this.btnAjouter_MouseEnter);
+            this.btnAjouter.MouseLeave += new System.EventHandler(this.btnAjouter_MouseLeave);
             // 
             // comboBox1
             // 
@@ -318,6 +320,8 @@
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
             this.btnRechercher.Click += new System.EventHandler(this.btnRechercher_Click);
+            this.btnRechercher.MouseEnter += new System.EventHandler(this.btnRechercher_MouseEnter);
+            this.btnRechercher.MouseLeave += new System.EventHandler(this.btnRechercher_MouseLeave);
             // 
             // btnSupprimer
             // 
@@ -329,6 +333,8 @@
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            this.btnSupprimer.MouseEnter += new System.EventHandler(this.btnSupprimer_MouseEnter);
+            this.btnSupprimer.MouseLeave += new System.EventHandler(this.btnSupprimer_MouseLeave);
             // 
             // btnModifier
             // 
@@ -340,6 +346,8 @@
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            this.btnModifier.MouseEnter += new System.EventHandler(this.btnModifier_MouseEnter);
+            this.btnModifier.MouseLeave += new System.EventHandler(this.btnModifier_MouseLeave);
             // 
             // button2
             // 
@@ -351,6 +359,8 @@
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // SF_FormAgentEtudiants
             // 

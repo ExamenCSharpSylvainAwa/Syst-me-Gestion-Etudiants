@@ -342,6 +342,57 @@ namespace Système_de_Gestion_des_Étudiants
             }
         }
 
+       
+        private void btnAjouter_MouseEnter(object sender, EventArgs e)
+        {
+            btnAjouter.BackColor = Color.DodgerBlue;
+            btnAjouter.ForeColor = Color.White;
+        }
+
+        private void btnAjouter_MouseLeave(object sender, EventArgs e)
+        {
+            btnAjouter.BackColor = Color.LightGray;
+            btnAjouter.ForeColor = Color.Black;
+        }
+
+     
+        private void btnModifier_MouseEnter(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.MediumSeaGreen;
+            btnModifier.ForeColor = Color.White;
+        }
+
+        private void btnModifier_MouseLeave(object sender, EventArgs e)
+        {
+            btnModifier.BackColor = Color.LightGray;
+            btnModifier.ForeColor = Color.Black;
+        }
+
+      
+        private void btnSupprimer_MouseEnter(object sender, EventArgs e)
+        {
+            btnSupprimer.BackColor = Color.Crimson;
+            btnSupprimer.ForeColor = Color.White;
+        }
+
+        private void btnSupprimer_MouseLeave(object sender, EventArgs e)
+        {
+            btnSupprimer.BackColor = Color.LightGray;
+            btnSupprimer.ForeColor = Color.Black;
+        }
+
+        
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.DarkOrange;
+            button2.ForeColor = Color.White;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.LightGray;
+            button2.ForeColor = Color.Black;
+        }
 
     }
 }

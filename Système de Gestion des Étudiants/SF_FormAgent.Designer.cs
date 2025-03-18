@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SF_FormAgent));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNotes = new System.Windows.Forms.Button();
             this.btnEtudiant = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +61,18 @@
             this.splitContainer1.Size = new System.Drawing.Size(1714, 787);
             this.splitContainer1.SplitterDistance = 373;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(48, 667);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(303, 47);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Déconnexion";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -92,6 +104,8 @@
             this.btnNotes.Text = "Notes";
             this.btnNotes.UseVisualStyleBackColor = true;
             this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
+            this.btnNotes.MouseEnter += new System.EventHandler(this.btnNotes_MouseEnter);
+            this.btnNotes.MouseLeave += new System.EventHandler(this.btnNotes_MouseLeave);
             // 
             // btnEtudiant
             // 
@@ -103,18 +117,8 @@
             this.btnEtudiant.Text = "Etudiants";
             this.btnEtudiant.UseVisualStyleBackColor = true;
             this.btnEtudiant.Click += new System.EventHandler(this.btnEtudiant_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(48, 667);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(303, 47);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Déconnexion";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnEtudiant.MouseEnter += new System.EventHandler(this.btnEtudiant_MouseEnter);
+            this.btnEtudiant.MouseLeave += new System.EventHandler(this.btnEtudiant_MouseLeave);
             // 
             // SF_FormAgent
             // 

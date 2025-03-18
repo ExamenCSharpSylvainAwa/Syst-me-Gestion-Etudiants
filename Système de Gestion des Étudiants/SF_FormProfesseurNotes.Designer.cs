@@ -115,6 +115,8 @@
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            this.btnAjouter.MouseEnter += new System.EventHandler(this.btnAjouter_MouseEnter);
+            this.btnAjouter.MouseLeave += new System.EventHandler(this.btnAjouter_MouseLeave);
             // 
             // button1
             // 
@@ -126,6 +128,8 @@
             this.button1.Text = "Fermer";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // btnSupprimer
             // 
@@ -137,6 +141,8 @@
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            this.btnSupprimer.MouseEnter += new System.EventHandler(this.btnSupprimer_MouseEnter);
+            this.btnSupprimer.MouseLeave += new System.EventHandler(this.btnSupprimer_MouseLeave);
             // 
             // btnModifier
             // 
@@ -148,6 +154,8 @@
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            this.btnModifier.MouseEnter += new System.EventHandler(this.btnModifier_MouseEnter);
+            this.btnModifier.MouseLeave += new System.EventHandler(this.btnModifier_MouseLeave);
             // 
             // comboBox2
             // 

@@ -188,12 +188,14 @@
             this.btnAjouterCours.Text = "Ajouter";
             this.btnAjouterCours.UseVisualStyleBackColor = true;
             this.btnAjouterCours.Click += new System.EventHandler(this.btnAjouterCours_Click_1);
+            this.btnAjouterCours.MouseEnter += new System.EventHandler(this.btnAjouterCours_MouseEnter);
+            this.btnAjouterCours.MouseLeave += new System.EventHandler(this.btnAjouterCours_MouseLeave);
             // 
             // btnFermer
             // 
-            this.btnFermer.BackColor = System.Drawing.Color.Red;
+            this.btnFermer.BackColor = System.Drawing.Color.White;
             this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFermer.ForeColor = System.Drawing.Color.White;
+            this.btnFermer.ForeColor = System.Drawing.Color.Black;
             this.btnFermer.Location = new System.Drawing.Point(1459, 722);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(153, 43);
@@ -201,6 +203,8 @@
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = false;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click_1);
+            this.btnFermer.MouseEnter += new System.EventHandler(this.btnFermer_MouseEnter);
+            this.btnFermer.MouseLeave += new System.EventHandler(this.btnFermer_MouseLeave);
             // 
             // btnSupprimerCours
             // 
@@ -212,6 +216,8 @@
             this.btnSupprimerCours.Text = "Supprimer";
             this.btnSupprimerCours.UseVisualStyleBackColor = true;
             this.btnSupprimerCours.Click += new System.EventHandler(this.btnSupprimerCours_Click);
+            this.btnSupprimerCours.MouseEnter += new System.EventHandler(this.btnSupprimerCours_MouseEnter);
+            this.btnSupprimerCours.MouseLeave += new System.EventHandler(this.btnSupprimerCours_MouseLeave);
             // 
             // btnModifierCours
             // 
@@ -223,6 +229,8 @@
             this.btnModifierCours.Text = "Modifier";
             this.btnModifierCours.UseVisualStyleBackColor = true;
             this.btnModifierCours.Click += new System.EventHandler(this.btnModifierCours_Click);
+            this.btnModifierCours.MouseEnter += new System.EventHandler(this.btnModifierCours_MouseEnter);
+            this.btnModifierCours.MouseLeave += new System.EventHandler(this.btnModifierCours_MouseLeave);
             // 
             // btnModifierMatiere
             // 
@@ -234,6 +242,8 @@
             this.btnModifierMatiere.Text = "Modifier";
             this.btnModifierMatiere.UseVisualStyleBackColor = true;
             this.btnModifierMatiere.Click += new System.EventHandler(this.btnModifierMatiere_Click);
+            this.btnModifierMatiere.MouseEnter += new System.EventHandler(this.btnModifierMatiere_MouseEnter);
+            this.btnModifierMatiere.MouseLeave += new System.EventHandler(this.btnModifierMatiere_MouseLeave);
             // 
             // btnAjouterMatieres
             // 
@@ -245,6 +255,8 @@
             this.btnAjouterMatieres.Text = "Ajouter";
             this.btnAjouterMatieres.UseVisualStyleBackColor = true;
             this.btnAjouterMatieres.Click += new System.EventHandler(this.btnAjouterMatieres_Click);
+            this.btnAjouterMatieres.MouseEnter += new System.EventHandler(this.btnAjouterMatieres_MouseEnter);
+            this.btnAjouterMatieres.MouseLeave += new System.EventHandler(this.btnAjouterMatieres_MouseLeave);
             // 
             // btnSupprimerMatiere
             // 
@@ -256,6 +268,8 @@
             this.btnSupprimerMatiere.Text = "Supprimer";
             this.btnSupprimerMatiere.UseVisualStyleBackColor = true;
             this.btnSupprimerMatiere.Click += new System.EventHandler(this.btnSupprimerMatiere_Click);
+            this.btnSupprimerMatiere.MouseEnter += new System.EventHandler(this.btnSupprimerMatiere_MouseEnter);
+            this.btnSupprimerMatiere.MouseLeave += new System.EventHandler(this.btnSupprimerMatiere_MouseLeave);
             // 
             // comboBox3
             // 

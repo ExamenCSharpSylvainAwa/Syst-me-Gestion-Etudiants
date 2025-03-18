@@ -44,6 +44,7 @@
             // 
             // btnUser
             // 
+            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.Location = new System.Drawing.Point(411, 168);
             this.btnUser.Name = "btnUser";
@@ -52,9 +53,12 @@
             this.btnUser.Text = "Utilisateurs";
             this.btnUser.UseVisualStyleBackColor = true;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
+            this.btnUser.MouseEnter += new System.EventHandler(this.btnUser_MouseEnter);
+            this.btnUser.MouseLeave += new System.EventHandler(this.btnUser_MouseLeave);
             // 
             // btnEtudiant
             // 
+            this.btnEtudiant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEtudiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEtudiant.Location = new System.Drawing.Point(821, 168);
             this.btnEtudiant.Name = "btnEtudiant";
@@ -63,9 +67,12 @@
             this.btnEtudiant.Text = "Etudiants";
             this.btnEtudiant.UseVisualStyleBackColor = true;
             this.btnEtudiant.Click += new System.EventHandler(this.btnEtudiant_Click);
+            this.btnEtudiant.MouseEnter += new System.EventHandler(this.btnEtudiant_MouseEnter);
+            this.btnEtudiant.MouseLeave += new System.EventHandler(this.btnEtudiant_MouseLeave);
             // 
             // btnProfesseur
             // 
+            this.btnProfesseur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfesseur.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfesseur.Location = new System.Drawing.Point(821, 410);
             this.btnProfesseur.Name = "btnProfesseur";
@@ -74,9 +81,12 @@
             this.btnProfesseur.Text = "Professeurs";
             this.btnProfesseur.UseVisualStyleBackColor = true;
             this.btnProfesseur.Click += new System.EventHandler(this.btnProffesseur_Click);
+            this.btnProfesseur.MouseEnter += new System.EventHandler(this.btnProfesseur_MouseEnter);
+            this.btnProfesseur.MouseLeave += new System.EventHandler(this.btnProfesseur_MouseLeave);
             // 
             // btnClasse
             // 
+            this.btnClasse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClasse.Location = new System.Drawing.Point(1261, 168);
             this.btnClasse.Name = "btnClasse";
@@ -85,9 +95,12 @@
             this.btnClasse.Text = "Classes";
             this.btnClasse.UseVisualStyleBackColor = true;
             this.btnClasse.Click += new System.EventHandler(this.btnClasse_Click);
+            this.btnClasse.MouseEnter += new System.EventHandler(this.btnClasse_MouseEnter);
+            this.btnClasse.MouseLeave += new System.EventHandler(this.btnClasse_MouseLeave);
             // 
             // btnCoursMatiere
             // 
+            this.btnCoursMatiere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCoursMatiere.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCoursMatiere.Location = new System.Drawing.Point(411, 410);
             this.btnCoursMatiere.Name = "btnCoursMatiere";
@@ -96,9 +109,12 @@
             this.btnCoursMatiere.Text = "Cours et Matières";
             this.btnCoursMatiere.UseVisualStyleBackColor = true;
             this.btnCoursMatiere.Click += new System.EventHandler(this.btnCoursMatiere_Click);
+            this.btnCoursMatiere.MouseEnter += new System.EventHandler(this.btnCoursMatiere_MouseEnter);
+            this.btnCoursMatiere.MouseLeave += new System.EventHandler(this.btnCoursMatiere_MouseLeave);
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(1261, 410);
             this.button1.Name = "button1";
@@ -107,6 +123,7 @@
             this.button1.Text = "Notes";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
             // pictureBox1
             // 
@@ -130,6 +147,7 @@
             // 
             // btnRapport
             // 
+            this.btnRapport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRapport.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRapport.Location = new System.Drawing.Point(744, 604);
             this.btnRapport.Name = "btnRapport";
@@ -141,6 +159,7 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Red;
             this.button2.Location = new System.Drawing.Point(12, 726);
@@ -148,13 +167,16 @@
             this.button2.Size = new System.Drawing.Size(303, 47);
             this.button2.TabIndex = 9;
             this.button2.Text = "Déconnexion";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1687, 830);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnRapport);
@@ -169,6 +191,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Etudiants";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -546,5 +546,90 @@ namespace Système_de_Gestion_des_Étudiants
                 }
                 }
             }
+
+        private void btnAjouterCours_MouseEnter(object sender, EventArgs e)
+        {
+            btnAjouterCours.BackColor = Color.LightSkyBlue;
+            btnAjouterCours.ForeColor = Color.White;
+        }
+
+        private void btnAjouterCours_MouseLeave(object sender, EventArgs e)
+        {
+            btnAjouterCours.BackColor = Color.LightGray;
+            btnAjouterCours.ForeColor = Color.Black;
+        }
+
+        private void btnModifierCours_MouseEnter(object sender, EventArgs e)
+        {
+            btnModifierCours.BackColor = Color.LightGreen;
+            btnModifierCours.ForeColor = Color.White;
+        }
+
+        private void btnModifierCours_MouseLeave(object sender, EventArgs e)
+        {
+            btnModifierCours.BackColor = Color.LightGray;
+            btnModifierCours.ForeColor = Color.Black;
+        }
+
+        private void btnSupprimerCours_MouseEnter(object sender, EventArgs e)
+        {
+            btnSupprimerCours.BackColor = Color.IndianRed;
+            btnSupprimerCours.ForeColor = Color.White;
+        }
+
+        private void btnSupprimerCours_MouseLeave(object sender, EventArgs e)
+        {
+            btnSupprimerCours.BackColor = Color.LightGray;
+            btnSupprimerCours.ForeColor = Color.Black;
+        }
+
+        private void btnAjouterMatieres_MouseEnter(object sender, EventArgs e)
+        {
+            btnAjouterMatieres.BackColor = Color.Magenta;
+            btnAjouterMatieres.ForeColor = Color.White;
+        }
+
+        private void btnAjouterMatieres_MouseLeave(object sender, EventArgs e)
+        {
+            btnAjouterMatieres.BackColor = Color.LightGray;
+            btnAjouterMatieres.ForeColor = Color.Black;
+        }
+
+        private void btnModifierMatiere_MouseEnter(object sender, EventArgs e)
+        {
+            btnModifierMatiere.BackColor = Color.Yellow;
+            btnModifierMatiere.ForeColor = Color.Black;
+        }
+
+        private void btnModifierMatiere_MouseLeave(object sender, EventArgs e)
+        {
+            btnModifierMatiere.BackColor = Color.LightGray;
+            btnModifierMatiere.ForeColor = Color.Black;
+        }
+
+        private void btnSupprimerMatiere_MouseEnter(object sender, EventArgs e)
+        {
+            btnSupprimerMatiere.BackColor = Color.Violet;
+            btnSupprimerMatiere.ForeColor = Color.White;
+        }
+
+        private void btnSupprimerMatiere_MouseLeave(object sender, EventArgs e)
+        {
+            btnSupprimerMatiere.BackColor = Color.LightGray;
+            btnSupprimerMatiere.ForeColor = Color.Black;
+        }
+
+        private void btnFermer_MouseEnter(object sender, EventArgs e)
+        {
+            btnFermer.BackColor = Color.DimGray;
+            btnFermer.ForeColor = Color.White;
+        }
+
+        private void btnFermer_MouseLeave(object sender, EventArgs e)
+        {
+            btnFermer.BackColor = Color.LightGray;
+            btnFermer.ForeColor = Color.Black;
+        }
+
     }
 }
